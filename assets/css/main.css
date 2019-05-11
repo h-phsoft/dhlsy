@@ -33,12 +33,12 @@
 }
 
 html {
-  font-family: Frutiger, Helvetica, Arial, sans-serif;
+  font-family: Frutiger, Helvetica;
   font-size: 14px;
 }
 
 body {
-  font-family: Frutiger, Helvetica, Arial, sans-serif;
+  font-family: Frutiger, Helvetica;
   /*color: #1e2022;*/
   color: #000;
   -webkit-font-smoothing: antialiased;
@@ -187,7 +187,6 @@ footer .follow {
 }
 footer .copyrights {
   color: #fff;
-  font-family: Arial, sans-serif;
 }
 /*------------------------------------
   Highlight Color
@@ -7268,7 +7267,7 @@ footer .copyrights {
   padding: 1rem;
   font-size: 0.75rem;
   font-weight: 400;
-  font-family: Frutiger, Helvetica, Arial, sans-serif;
+  font-family: Frutiger, Helvetica;
 }
 
 .u-stats-v2__tooltip::before {
