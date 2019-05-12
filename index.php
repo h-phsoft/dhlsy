@@ -98,10 +98,11 @@ if ($nModeId == -1) {
       <!-- Hero Section -->
       <?php include 'ph-header-top.php'; ?>
       <!-- End Hero Section -->
-
-      <!-- Page Section -->
-      <?php include $pageName; ?>
-      <!-- End Page Section -->
+      <section id="mainSection" style="margin: 0; padding: 0;">
+        <!-- Page Section -->
+        <?php include $pageName; ?>
+        <!-- End Page Section -->
+      </section>
     </main>
     <!-- ========== END MAIN CONTENT ========== -->
     <!-- Go to Top -->
