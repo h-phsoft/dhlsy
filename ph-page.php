@@ -68,7 +68,7 @@ if ($nBlocks > 0) {
     if ($nBlkType == 1) {
       // Text
       ?>
-      <section class="text-center container-fluid p-5" <?php echo $vBGColor; ?>>
+      <section class="text-center container-fluid p-3" <?php echo $vBGColor; ?>>
         <div class="text-center container p-0">
           <?php
           if (count($cPageBlock->Block->aDetails) > 0) {
@@ -100,7 +100,7 @@ if ($nBlocks > 0) {
     } elseif ($nBlkType == 2) {
       // Slider
       ?>
-      <section class="text-center container-fluid p-5" <?php echo $vBGColor; ?>>
+      <section class="text-center container-fluid p-3" <?php echo $vBGColor; ?>>
         <div class="text-center container p-0">
           <div class="px-5">
             <?php
@@ -153,7 +153,7 @@ if ($nBlocks > 0) {
     } elseif ($nBlkType == 3) {
       // Images
       ?>
-      <section class="text-center container-fluid p-5" <?php echo $vBGColor; ?>>
+      <section class="text-center container-fluid p-3" <?php echo $vBGColor; ?>>
         <div class="text-center container p-0">
           <?php
           if (count($cPageBlock->Block->aDetails) > 0) {
@@ -183,7 +183,7 @@ if ($nBlocks > 0) {
     } elseif ($nBlkType == 4) {
       // Wide Image
       ?>
-      <section class="text-center container-fluid px-0 py-5" <?php echo $vBGColor; ?>>
+      <section class="text-center container-fluid px-0 py-3" <?php echo $vBGColor; ?>>
         <?php
         if (count($cPageBlock->Block->aDetails) > 0) {
           foreach ($cPageBlock->Block->aDetails as $cBlockDetail) {
@@ -205,7 +205,7 @@ if ($nBlocks > 0) {
       $nCountActivities = count($aActivities);
       if ($nCountNews > 0 || $nCountActivities > 0) {
         ?>
-        <section class="text-center container-fluid p-5" <?php echo $vBGColor; ?>>
+        <section class="text-center container-fluid p-3" <?php echo $vBGColor; ?>>
           <div class="text-center container p-0">
             <div class="row">
               <div class="col-12 col-md-7 col-12 d-flex justify-content-end">

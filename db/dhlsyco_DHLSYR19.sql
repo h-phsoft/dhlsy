@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: May 12, 2019 at 03:35 PM
--- Server version: 5.7.24
--- PHP Version: 7.2.14
+-- Host: localhost:3306
+-- Generation Time: May 07, 2019 at 01:20 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dhlsy`
+-- Database: `dhlsyco_DHLSYR19`
 --
 
 -- --------------------------------------------------------
@@ -28,16 +28,13 @@ SET time_zone = "+00:00";
 -- Table structure for table `cpy_block`
 --
 
-DROP TABLE IF EXISTS `cpy_block`;
-CREATE TABLE IF NOT EXISTS `cpy_block` (
-  `blk_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cpy_block` (
+  `blk_id` int(11) NOT NULL,
   `blk_name` varchar(200) NOT NULL,
   `blk_status` smallint(6) NOT NULL DEFAULT '1',
   `blk_type` smallint(6) NOT NULL DEFAULT '1',
-  `blk_stext` text,
-  PRIMARY KEY (`blk_id`),
-  UNIQUE KEY `blk_name` (`blk_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+  `blk_stext` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_block`
@@ -118,9 +115,8 @@ INSERT INTO `cpy_block` (`blk_id`, `blk_name`, `blk_status`, `blk_type`, `blk_st
 -- Table structure for table `cpy_block_detail`
 --
 
-DROP TABLE IF EXISTS `cpy_block_detail`;
-CREATE TABLE IF NOT EXISTS `cpy_block_detail` (
-  `dblk_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cpy_block_detail` (
+  `dblk_id` int(11) NOT NULL,
   `blk_id` int(11) NOT NULL,
   `dblk_order` smallint(6) NOT NULL DEFAULT '1',
   `dblk_status` smallint(6) NOT NULL DEFAULT '1',
@@ -128,17 +124,15 @@ CREATE TABLE IF NOT EXISTS `cpy_block_detail` (
   `dblk_name` varchar(200) NOT NULL,
   `dblk_image` varchar(200) DEFAULT NULL,
   `dblk_text` text,
-  `dblk_stext` text,
-  PRIMARY KEY (`dblk_id`),
-  UNIQUE KEY `dblk_name` (`blk_id`,`dblk_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=248 DEFAULT CHARSET=utf8;
+  `dblk_stext` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_block_detail`
 --
 
 INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`, `dblk_type`, `dblk_name`, `dblk_image`, `dblk_text`, `dblk_stext`) VALUES
-(1, 1, 2, 1, 10, 'Home Welcome 02', NULL, '<p>\r\n  <span style=\"font-size:17px;\">\r\n    As Exclusive Agent of DHL Global Forwarding / DHL Freight in Syria, Nazha Logistics is acting as a logistics market leader locally. Nazha Logistics signifies the &ldquo;One Stop Shopping&rdquo; concept with the full range of logistics products starting from the basic conventional freight services including Airfreight, Ocean Freight and Road Fright to the most sophisticated services including &ldquo;Customer Program Management&rdquo; systems which we provide to our international customers according to the Quality Management System ISO 9001:2015 acquired through SGS.\r\n  </span>\r\n</p>\r\n', NULL),
+(1, 1, 2, 1, 10, 'Home Welcome 02', NULL, '<p><span style=\"font-size:18px\"><span style=\"background-color:#ffffff; color:#222222; font-family:Arial,Helvetica,sans-serif\">As Exclusive Agent of DHL Global Forwarding / DHL Freight in Syria, Nazha Logistics is acting as a logistics market leader locally. Nazha Logistics signifies the &ldquo;One Stop Shopping&rdquo; concept with the full range of logistics products starting from the basic conventional freight services including Airfreight, Ocean Freight and Road Fright to the most sophisticated services including &ldquo;Customer Program Management&rdquo; systems which we provide to our international customers according to the Quality Management System ISO 9001:2015 acquired through SGS.</span></span></p>', NULL),
 (2, 2, 1, 1, 12, 'OUR MISSION 11-2018', NULL, '<h1 style=\"text-align:center\"><span style=\"color:#c0392b\">OUR MISSION</span></h1>\r\n\r\n<div>\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong>Excellence. Simply Delivered.</strong> This mean that we provide the best, smartest, and integrated logistic services<br />\r\nwith full transparency, flexibility and reliability to create sustainable growth to our business and society.</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n</div>', NULL),
 (3, 2, 2, 1, 12, 'OUR VALUES 11-2018', NULL, '<h1><span style=\"color:#c0392b\">OUR VALUES</span></h1>', NULL),
 (4, 2, 3, 1, 3, 'Quality 11-2018', NULL, '<h3 style=\"text-align:center\">Quality</h3>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\">What we do, we do very well</span></p>', NULL),
@@ -149,16 +143,16 @@ INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`
 (16, 6, 1, 1, 12, '1', '02b814765c80add12980b28c8d67bd9e(1).jpg', NULL, NULL),
 (17, 6, 2, 1, 12, '2', '2019-bugatti-veyron-speed-test(1).jpg', NULL, NULL),
 (18, 6, 3, 1, 12, '3', 'BugattiDivo_02(1).jpg', NULL, NULL),
-(19, 7, 1, 1, 12, 'Air Freight', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center; color:#d40511; font-size:20px\">\r\n  AIR FREIGHT\r\n</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center; font-size:14px\">\r\n  <strong>\r\n    Airfreight Export\r\n  </strong>\r\n  and <strong>Airfreight Import</strong>\r\n  are products that predominately use air mode\r\n  <br />\r\n  and offers a choice in delivery speeds to best suit customer requirements.\r\n</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center; font-size:14px\">\r\n  Working together with carefully selected carriers, we operate with schedules on all\r\n  <br />\r\n  the world&rsquo;s major routes so you can plan with certainty for greater efficiency.\r\n  <br />\r\n  <br />\r\n  Our Airfreight service is also highly flexible to meet specific customer requirements. Including\r\n</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center; font-size:14px\">\r\n  <strong>\r\n    Airport to airport\r\n    <br />\r\n    Door to door\r\n    <br />\r\n    Door to airport\r\n    <br />\r\n    Airport to door\r\n  </strong>\r\n</p>\r\n', 'Airfreight Export and Airfreight Import are products that predominately use air mode and offers a choice in delivery speeds to best suit customer requirements.\r\nWorking together with carefully selected carriers, we operate with schedules on all the world’s major routes so you can plan with certainty for greater efficiency.\r\nOur Airfreight service is also highly flexible to meet specific customer requirements. Including'),
-(20, 8, 1, 1, 12, 'Ocean Freight', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center; color:#d40511; font-size:20px\">\r\n  OCEAN FREIGHT\r\n</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center; font-size:14px\">\r\n  <strong>\r\n    Ocean Freight Export and Ocean Freight Import\r\n  </strong>\r\n  ; with our broad range of Ocean Freight products covering different equipment types\r\n  <br />\r\n  and consolidation services, we ensure your cargo reaches the right place, at the right time in a cost-efficient way. We work with a spread of ocean\r\n  <br />\r\n  carriers covering major carrier alliances with planned space protection from every major container port in the world to deliver reliability.\r\n</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center; font-size:14px\">\r\n  Naturally, our expertise also includes focused and professional handling of all conventional cargo transportation.\r\n  <br />\r\n  DHL Global Forwarding currently handle in excess of 2.8 million TEU&rsquo;s and more than 2 million cubic meters of LCL freight annually, across all continents, with the following services\r\n</p>\r\n<p style=\"text-align:center; font-size:14px\">\r\n  <strong>\r\n    OCEAN DIRECT FCL - Full container load\r\n  </strong>\r\n  <br />\r\n  <strong>\r\n    OCEAN CONNECT LCL - Less than container load\r\n  </strong>\r\n  <br />\r\n  <strong>\r\n    OCEAN CONTAINER MANAGEMENT - FCL inland service\r\n  </strong>\r\n  <br />\r\n  <strong>\r\n    OCEAN SPECIAL - Conventional load services\r\n  </strong>\r\n</p>\r\n', 'Ocean Freight Export and Ocean Freight Import; with our broad range of Ocean Freight products covering different equipment types and consolidation services, we ensure your cargo reaches the right place, at the right time in a cost-efficient way. We work with a spread of ocean carriers covering major carrier alliances with planned space protection from every major container port in the world to deliver reliability.\r\n\r\nNaturally, our expertise also includes focused and professional handling of all conventional cargo transportation.\r\n\r\nDHL Global Forwarding currently handle in excess of 2.8 million TEU’s and more than 2 million cubic meters of LCL freight annually, across all continents, with the following services \r\n\r\n•	OCEAN DIRECT FCL - Full container load\r\n•	OCEAN CONNECT LCL - Less than container load\r\n•	OCEAN CONTAINER MANAGEMENT - FCL inland services\r\n•	OCEAN SPECIAL - Conventional load services\r\n\r\nadded value services \r\n•	OCEAN ASSEMBLY - Single & multi country consolidation\r\n•	OCEAN CHARTER - Cargo vessel charter\r\n•	FLEXITANKS - Transportation of bulk-liquids\r\n•	OCEAN THERMONET - Temperature Controlled Ocean Freight\r\n•	Cross Trade – moving shipments between two countries regardless of customer location'),
-(21, 9, 1, 1, 12, 'Road Freight', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">ROAD FREIGHT</span></span></span><br />\r\n<br />\r\n<span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">We provide Road Freight Import, Export and within the country regular transportation (with a range of additional services), giving you truly extensive coverage at domestic and international level. With our dispatch flexibility and long term co-operation with trucking specialists, DHL Freight handles regular part loads, as well as full loads, safely and punctually in all directions.</span></span></span><br />\r\n<br />\r\n<span style=\"background-color:white\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">Our wide range of transportation equipment &ndash; road-trains, swap-bodies and semi-trailers &ndash; guarantees flexible loading conditions. With DHL Freight you also benefit from seamless communication via the EDI interface, which transmits your order entries and offers reporting and statistics.&nbsp;</span></span></span><br />\r\n<span style=\"background-color:white\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">Core Services:</span></span></span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:14px\"><strong><span style=\"font-family:Arial,Helvetica,sans-serif\">FTL Full Truck Load service</span></strong></span><br /><span style=\"font-size:14px\"><strong><span style=\"font-family:Arial,Helvetica,sans-serif\">PTL Part Truck Load service</span></strong></span><br /><span style=\"font-size:14px\"><strong><span style=\"font-family:Arial,Helvetica,sans-serif\">LTL Less than Truck Load service</span></strong></span><br /><span style=\"font-size:14px\"><strong><span style=\"font-family:Arial,Helvetica,sans-serif\">Transshipping services</span></strong></span></p>', 'We provide Road Freight Import, Export and within the country regular transportation (with a range of additional services), giving you truly extensive coverage at domestic and international level. With our dispatch flexibility and long term co-operation with trucking specialists, DHL Freight handles regular part loads, as well as full loads, safely and punctually in all directions.\r\n\r\nOur wide range of transportation equipment – road-trains, swap-bodies and semi-trailers – guarantees flexible loading conditions. With DHL Freight you also benefit from seamless communication via the EDI interface, which transmits your order entries and offers reporting and statistics. \r\n\r\nCore Services:\r\n•	Full Truck Loads \r\n•	Part Truck Loads \r\n\r\nValue Added Services:\r\n•	Direct pick-up and delivery service using one vehicle, dedicated to your shipment\r\n•	DHL Freight managed and quality-measured transport fleet\r\n•	Service embedded in DHL Freight’s international network, with 208 terminals across Europe\r\n•	Defined lead times based on origin/destination\r\n•	Support provided via direct contact with local DHL Freight experts\r\n•	Proof of delivery (POD)\r\n•	Transportation of dangerous goods\r\n•	Additional insurance\r\n•	Individual performance reports'),
+(19, 7, 1, 1, 12, 'Air Freight', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"color:#d40511\"><span style=\"font-size:20px\">AIR FREIGHT</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:Calibri,sans-serif\"><strong><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">Airfreight Export</span></strong><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"> and <strong>Airfreight Import</strong> are products that predominately use air mode</span></span></span><br />\r\nand offers a choice in delivery speeds to best suit customer requirements.</span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">Working together with carefully selected carriers, we operate with schedules on all</span></span></span><br />\r\n<span style=\"background-color:white\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">the world&rsquo;s major routes so you can plan with certainty for greater efficiency.<br />\r\n<br />\r\nOur Airfreight service is also highly flexible to meet specific customer requirements. Including</span></span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><strong>Airport to airport<br />\r\nDoor to door<br />\r\nDoor to airport<br />\r\nAirport to door</strong></span></p>', 'Airfreight Export and Airfreight Import are products that predominately use air mode and offers a choice in delivery speeds to best suit customer requirements.\r\nWorking together with carefully selected carriers, we operate with schedules on all the world’s major routes so you can plan with certainty for greater efficiency.\r\nOur Airfreight service is also highly flexible to meet specific customer requirements. Including'),
+(20, 8, 1, 1, 12, 'Ocean Freight', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"color:#d40511\"><span style=\"font-size:20px\">OCEAN FREIGHT</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Ocean Freight Export and Ocean Freight Import</span></strong><span style=\"font-family:&quot;Arial&quot;,sans-serif\">; with our broad range of Ocean Freight products covering different equipment types<br />\r\nand consolidation services, we ensure your cargo reaches the right place, at the right time in a cost-efficient way. We work with a spread of ocean<br />\r\ncarriers covering major carrier alliances with planned space protection from every major container port in the world to deliver reliability.</span></span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Naturally, our expertise also includes focused and professional handling of all conventional cargo transportation.<br />\r\nDHL Global Forwarding currently handle in excess of 2.8 million TEU&rsquo;s and more than 2 million cubic meters of LCL freight annually, across all continents, with the following services </span></span></span></span></p>', 'Ocean Freight Export and Ocean Freight Import; with our broad range of Ocean Freight products covering different equipment types and consolidation services, we ensure your cargo reaches the right place, at the right time in a cost-efficient way. We work with a spread of ocean carriers covering major carrier alliances with planned space protection from every major container port in the world to deliver reliability.\r\n\r\nNaturally, our expertise also includes focused and professional handling of all conventional cargo transportation.\r\n\r\nDHL Global Forwarding currently handle in excess of 2.8 million TEU’s and more than 2 million cubic meters of LCL freight annually, across all continents, with the following services \r\n\r\n•	OCEAN DIRECT FCL - Full container load\r\n•	OCEAN CONNECT LCL - Less than container load\r\n•	OCEAN CONTAINER MANAGEMENT - FCL inland services\r\n•	OCEAN SPECIAL - Conventional load services\r\n\r\nadded value services \r\n•	OCEAN ASSEMBLY - Single & multi country consolidation\r\n•	OCEAN CHARTER - Cargo vessel charter\r\n•	FLEXITANKS - Transportation of bulk-liquids\r\n•	OCEAN THERMONET - Temperature Controlled Ocean Freight\r\n•	Cross Trade – moving shipments between two countries regardless of customer location'),
+(21, 9, 1, 1, 12, 'Road Freight', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">ROAD FREIGHT</span></span></span><br />\r\n<br />\r\n<span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">We provide Road Freight Import, Export and within the country regular transportation (with a range of additional services), giving you truly extensive coverage at domestic and international level. With our dispatch flexibility and long term co-operation with trucking specialists, DHL Freight handles regular part loads, as well as full loads, safely and punctually in all directions.</span></span></span><br />\r\n<br />\r\n<span style=\"background-color:white\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">Our wide range of transportation equipment &ndash; road-trains, swap-bodies and semi-trailers &ndash; guarantees flexible loading conditions. With DHL Freight you also benefit from seamless communication via the EDI interface, which transmits your order entries and offers reporting and statistics.&nbsp;</span></span></span><br />\r\n<span style=\"background-color:white\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">Core Services:</span></span></span></span></p>', 'We provide Road Freight Import, Export and within the country regular transportation (with a range of additional services), giving you truly extensive coverage at domestic and international level. With our dispatch flexibility and long term co-operation with trucking specialists, DHL Freight handles regular part loads, as well as full loads, safely and punctually in all directions.\r\n\r\nOur wide range of transportation equipment – road-trains, swap-bodies and semi-trailers – guarantees flexible loading conditions. With DHL Freight you also benefit from seamless communication via the EDI interface, which transmits your order entries and offers reporting and statistics. \r\n\r\nCore Services:\r\n•	Full Truck Loads \r\n•	Part Truck Loads \r\n\r\nValue Added Services:\r\n•	Direct pick-up and delivery service using one vehicle, dedicated to your shipment\r\n•	DHL Freight managed and quality-measured transport fleet\r\n•	Service embedded in DHL Freight’s international network, with 208 terminals across Europe\r\n•	Defined lead times based on origin/destination\r\n•	Support provided via direct contact with local DHL Freight experts\r\n•	Proof of delivery (POD)\r\n•	Transportation of dangerous goods\r\n•	Additional insurance\r\n•	Individual performance reports'),
 (22, 10, 1, 1, 12, 'Multimodal Transport 01', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">MULTIMODAL TRANSPORT</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Road-Air and Ocean-Air Combing the speed of air freight with the economy of ocean freight / road freight<br />\r\nwe offer faster transit times at a considerably lower cost and lower carbon footprint than pure air freight.<br />\r\nEnsuring cargo remains in DHL&rsquo;s control at all times, this product offers a multi-modal service. </span></span></span></span></p>', 'Road-Air and Ocean-Air Combing the speed of air freight with the economy of ocean freight / road freight we offer faster transit times at a considerably lower cost and lower carbon footprint than pure air freight.\r\nEnsuring cargo remains in DHL’s control at all times, this product offers a multi-modal service. \r\n•	Import/export customs brokerage – we take control of all customs formalities and delivery documentation\r\n•	An alternative modal option during peak season congestion\r\n•	End-to-end real time visibility\r\n•	Green transport'),
-(23, 11, 1, 1, 12, 'Customs Clearance 0101', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">CUSTOMS CLEARANCE</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span>Nazha Logistics - DHL Global Forwarding / DHL Freight Syria has profound understanding of customs clearance which we offer at</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:14px\"><strong><span><span><span>Airports</span></span></span></strong></span><br />\r\n<span style=\"font-size:14px\"><strong><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Ports</span></span></span></strong></span><br />\r\n<span style=\"font-size:14px\"><strong><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Cross borders</span></span></span></strong></span><br />\r\n<span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\"><strong>Customs secretariats</strong></span></span></span></span><br />\r\n<span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\"><strong>Free Zones</strong></span></span></span></span></p>', 'We have long experience in customs clearance we handle clearance at \r\nAirports\r\nPorts\r\nCross borders\r\nCustoms secretariats \r\nFree Zones. \r\nClearing Services offered are :\r\nImport Customs Clearance \r\nExport Clearance \r\nTransit Customs Clearance \r\nCustoms Approval follow up \r\nImport License follow up \r\nAnalysis follow up \r\nRange of additional clearance services based on shipment purpose'),
-(24, 12, 1, 1, 12, 'Warehousing 0101', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Frutiger\"><span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">DHL Global Forwarding Damascus Logistics Facility</span><br />\r\n<span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">Located 7 KM from Damascus Airport and 23 KM from Damascus city center.<br />\r\nTotal Land area: 110,000 sqm, out of which 40,000 sqm are encircled by a 3.5 m high fence; this part contains the present warehouses and offices. </span></span><br />\r\n<span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">Total Warehouses Space:&nbsp; 5,000 sqm of fully equipped warehouses that will be extended to 14,000 sqm in phase two.</span></span></span><br />\r\n<br />\r\n<span style=\"font-size:16px\"><strong><span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">Facility specifications and equipmen</span></strong></span><span style=\"font-size:14px\"><strong><span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">t</span></strong></span></p>', 'We offer warehouse management at any location in the country based on customer requirements.\r\nDHL Global Forwarding Damascus Logistics Facility:\r\nLocated 7 KM from Damascus Airport and 23 KM from Damascus city center.\r\nTotal Land area: 110,000 sqm, out of which 40,000 sqm are encircled by a 3.5 m high fence; this part contains the present warehouses and offices. \r\nTotal Warehouses Space:  5,000 sqm of fully equipped warehouses that will be extended to 14,000 sqm in phase two.\r\nFacility specifications and equipment:\r\n•	Fire alerts, protection and escape routes\r\n•	Security guards \r\n•	Material Handling Equipment\r\n•	Racking & Shelving\r\n•	HSE needs\r\n•	Warehouse Management System (WMS)\r\n•	Insurance coverage\r\n\r\nOur Warehousing Solutions improve inventory efficiency and accelerate your response to changing customer demand. Our experts design, implement, and operate flexible warehousing and distribution solutions tailored to your business needs. They analyze every point in your supply chain to determine the optimal solution.\r\n•	Dedicated Warehouses \r\n•	Multi Customer Warehousing \r\n•	Ambient and temperature-controlled facilities\r\n•	Storage, pick, pack and dispatch\r\n•	Delivery and returns management\r\n\r\nInventory Optimization\r\nThrough effective inventory management, inefficiencies can be driven out of the supply chain, overall costs reduced and high service levels achieved. We optimize inventory at a line-item level at every stage of the supply chain.\r\n\r\nMulti-Customer Warehousing\r\nOur shared-user facilities are designed to meet the needs of any customer for consumer products, industrial equipment, chemicals and technology.\r\nThrough sharing of DHL\'s resources, such as space, labor, equipment and transportation, customers benefit from synergies that considerably reduce supply chain costs.\r\nThis environment returns significant value to a small business requiring distribution operations without long term lease or capital commitments, or a large enterprise handling a new acquisition, product launches or seasonal overflow'),
+(23, 11, 1, 1, 12, 'Customs Clearance 0101', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">CUSTOMS CLEARANCE</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><strong><span style=\"background-color:#ffffff; color:#222222; font-family:Arial,Helvetica,sans-serif\">Nazha Logistics - DHL Global Forwarding / DHL Freight Syria has profound understanding of customs clearance which we offer at</span></strong></span></p>', 'We have long experience in customs clearance we handle clearance at \r\nAirports\r\nPorts\r\nCross borders\r\nCustoms secretariats \r\nFree Zones. \r\nClearing Services offered are :\r\nImport Customs Clearance \r\nExport Clearance \r\nTransit Customs Clearance \r\nCustoms Approval follow up \r\nImport License follow up \r\nAnalysis follow up \r\nRange of additional clearance services based on shipment purpose'),
+(24, 12, 1, 1, 12, 'Warehousing 0101', NULL, '<p style=\"margin-left:0cm; margin-right:36pt; text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Frutiger\"><span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">DHL Global Forwarding Damascus Logistics Facility</span><br />\r\n<span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">Located 7 KM from Damascus Airport and 23 KM from Damascus city center.<br />\r\nTotal Land area: 110,000 sqm, out of which 40,000 sqm are encircled by a 3.5 m high fence; this part contains the present warehouses and offices. </span></span><br />\r\n<span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">Total Warehouses Space:&nbsp; 5,000 sqm of fully equipped warehouses that will be extended to 14,000 sqm in phase two.</span></span></span><br />\r\n<br />\r\n<span style=\"font-size:16px\"><strong><span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">Facility specifications and equipmen</span></strong></span><span style=\"font-size:14px\"><strong><span style=\"font-family:&quot;Frutiger&quot;,sans-serif\">t</span></strong></span></p>', 'We offer warehouse management at any location in the country based on customer requirements.\r\nDHL Global Forwarding Damascus Logistics Facility:\r\nLocated 7 KM from Damascus Airport and 23 KM from Damascus city center.\r\nTotal Land area: 110,000 sqm, out of which 40,000 sqm are encircled by a 3.5 m high fence; this part contains the present warehouses and offices. \r\nTotal Warehouses Space:  5,000 sqm of fully equipped warehouses that will be extended to 14,000 sqm in phase two.\r\nFacility specifications and equipment:\r\n•	Fire alerts, protection and escape routes\r\n•	Security guards \r\n•	Material Handling Equipment\r\n•	Racking & Shelving\r\n•	HSE needs\r\n•	Warehouse Management System (WMS)\r\n•	Insurance coverage\r\n\r\nOur Warehousing Solutions improve inventory efficiency and accelerate your response to changing customer demand. Our experts design, implement, and operate flexible warehousing and distribution solutions tailored to your business needs. They analyze every point in your supply chain to determine the optimal solution.\r\n•	Dedicated Warehouses \r\n•	Multi Customer Warehousing \r\n•	Ambient and temperature-controlled facilities\r\n•	Storage, pick, pack and dispatch\r\n•	Delivery and returns management\r\n\r\nInventory Optimization\r\nThrough effective inventory management, inefficiencies can be driven out of the supply chain, overall costs reduced and high service levels achieved. We optimize inventory at a line-item level at every stage of the supply chain.\r\n\r\nMulti-Customer Warehousing\r\nOur shared-user facilities are designed to meet the needs of any customer for consumer products, industrial equipment, chemicals and technology.\r\nThrough sharing of DHL\'s resources, such as space, labor, equipment and transportation, customers benefit from synergies that considerably reduce supply chain costs.\r\nThis environment returns significant value to a small business requiring distribution operations without long term lease or capital commitments, or a large enterprise handling a new acquisition, product launches or seasonal overflow'),
 (25, 13, 1, 1, 12, 'Packing & Removal', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">PACKING &amp; REMOVAL</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:36pt; text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Our mission is turning your Packing &amp; Removal experience into an exciting, enjoyable and Stress Free task.<br />\r\nOne stop shopping point as follows</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:14px\"><span style=\"color:#cc0033\">Packing<br />\r\nStorage<br />\r\nCustoms Clearance<br />\r\nShipping Services<br />\r\nDestination Services<br />\r\nUnpacking and removal of debris.</span></span></p>', 'Our mission is turning your Packing & Removal experience into an exciting, enjoyable and Stress Free task.\r\nOne stop shopping point as follows:\r\n•	Packing\r\n•	Storage \r\n•	Customs Clearance\r\n•	Shipping Services: Airfreight, Ocean Freight and Road Freight\r\n•	Destination Services \r\n•	Unpacking and removal of debris.\r\n\r\nPacking Steps:\r\nOur packing process has a defined outline, solid to ensure our customers trust and peace of mind, flexible enough to adjust according to needed requirements. Don’t wait until you have a moving day. Contact us at least one month before you intend to move, we will then work with you to help you through the process.\r\n 1.  Assessment: Our Experts will undertake an assessment survey to estimate our customers’ requirements and needs.\r\n  2. Offer: will be submitted promptly after thorough study.\r\n 3. Plan: a plan will be developed tailor made to fit each customer’s requirements and commodities.'),
 (26, 14, 1, 1, 12, 'Projects', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">PROJECTS</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">DHL understands the unique logistics challenges related to projects shipments.<br />\r\nWe provide a range of services that help align logistics operations with your business strategies.<br />\r\nOur processes, technology and people drive cost and capital out of your operations, whilst ensuring consistent and predictable service.</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">We let you focus on what you do best: design, engineer, install, construct and manufacture products the world depends on.<br />\r\nWith DHL as a partner, your goods will be delivered as safely and efficiently as possible.</span></span></span></p>', 'DHL understands the unique logistics challenges related to projects shipments. We provide a range of services that help align logistics operations with your business strategies. Our processes, technology and people drive cost and capital out of your operations, whilst ensuring consistent and predictable service.\r\n\r\nWe let you focus on what you do best: design, engineer, install, construct and manufacture products the world depends on. With DHL as a partner, your goods will be delivered as safely and efficiently as possible.\r\n\r\nCore Services\r\n•	Warehousing and Order Fulfillment\r\n•	Sub-assembly and Kitting\r\n•	Transportation Management\r\n•	Lead Logistics Provider (LLP)\r\n•	Industrial Projects Transportation\r\n\r\nWe address\r\n•	Transport and Logistics Design\r\n•	Logistics Management\r\n•	Project Cargo Logistics \r\n•	Heavy Loads \r\n•	Outsized Loads'),
 (27, 15, 1, 1, 12, 'Fairs & Events', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">FAIRS &amp; EVENTS</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">We offer complete logistics services for both Fairs &amp; Events Organizers and Clients.</span></strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Infrastructure</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">We accompany you! Wherever your customers and suppliers need us - we are already there </span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Our <strong>specialists</strong> are located around the globe and support you at <strong>every location worldwide</strong></span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Organizers and venues worldwide <strong>trust</strong> in us and appoint DHL as <strong>official forwarder</strong></span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Dedicated network </strong>of experienced operations personnel</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:36pt; text-align:center\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:36pt; text-align:center\"><span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Reliability and Quality of Service</strong></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">We help you preserve and deliver the highest quality to your customers</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">One partner with the ability to provide the <strong>most extensive product offering </strong></span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Experience in handling and shipping of <strong>exceptional shipments</strong></span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Full service </strong>approach before, during and after the show or event</span></span></p>', 'We offer complete logistics services for both Fairs & Events Organizers and Clients.\r\nInfrastructure\r\nWe accompany you! Wherever your customers and suppliers need us - we are already there \r\n•	Our specialists are located around the globe and support you at every location worldwide\r\n•	Organizers and venues worldwide trust in us and appoint DHL as official forwarder\r\n•	Dedicated network of experienced operations personnel\r\n\r\nReliability and Quality of Service\r\nWe help you preserve and deliver the highest quality to your customers\r\n•	One partner with the ability to provide the most extensive product offering \r\n•	Experience in handling and shipping of exceptional shipments\r\n•	Full service approach before, during and after the show or event\r\n\r\nInnovation and Tailor-made Solutions\r\nWe anticipate your needs while setting standards for the industry\r\n1.	Customized relationship management programs that mirror clients’ organizational needs\r\n2.	Providing specialized services, e.g. Project management, document support, customs clearance, on-site handling, delivery, storage concepts, packing\r\n\r\nIndustry expertise and Know-How\r\nOur experts are at your service to provide you with state-of-the-art service\r\n•	Global expertise teamed with local knowledge – we deliver the right integrated solution\r\n•	Unique understanding of customer requirements \r\n•	One personal and  dedicated point of contact for all your needs'),
-(28, 16, 1, 1, 12, 'Aid & Relief Services 0101', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center; color:#d40511; font-size:20px\">AID &amp; RELIEF SERVICES</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Due to the need of logistics services for the humanitarian aid across the country, DHL Global Forwarding -Syria<br />\r\nset up a department under the name of Aid &amp; Relief Services responsible for the Humanitarian Aid Logistics<br />\r\nwithin Syria through the following services</strong></span></span></p>', 'Due to the need of logistics services for the humanitarian aid across the country, DHL Global Forwarding -Syria set up a department under the name of Aid & Relief Services responsible for the Humanitarian Aid Logistics within Syria through the following services:\r\n1.	Transportation  \r\n•	Primary Transportation, from Syrian Ports (Lattakia & Tartous) or from Lebanon and Jordan borders to our warehouses.\r\n•	Secondary Transportation, from local warehouses or directly from Ports to all Cities in Syria, according to a pre-defined monthly cycle.\r\n2.	Charters\r\nCargo Charters to difficult-to-access and faraway areas within Syria\r\n\r\n3.	Customs Clearance\r\nDone at Ports and Borders as a supporting service to the transportation operations and for urgent Aid & Relief shipments, we arrange direct withdrawal (when required) to speed up the delivery process and settle the declarations later on.\r\n\r\n\r\n4.	Warehousing\r\n•	Dedicated warehouses with full warehousing management services for UN Agencies and NGOs which have huge operations in any location in Syria \r\n•	Multi-Customer warehousing services for UN Agencies and NGOs which need temporary services for small operations at our DHL Facility in Damascus \r\n5.	Packaging\r\nAid & Relief Packaging Department was established to provide re-packing and re-bagging services of a monthly pre-defined content of Aid & Relief Family Food and Non-Food Rations. These services are done through:\r\n•	Well trained staff with high productivity performance\r\n•	Ability to work 24 hours on shifts basis\r\n•	Ability to supply all kinds of packing equipment and packing materials\r\n•	Safety & Hygiene standards are strictly implemented\r\n\r\n6.	Supply\r\nDHL Global Forwarding can supply raw materials, re-pack them into kits and deliver them to the service requester as per the standards required by any UN Agency or Humanitarian Organization, giving priority to the local market in order to support the local Syrian families as per DHL Global Forwarding Aid & Relief policies which are in line with UN agencies and other humanitarian organizations. However, when the raw materials must be imported, DHL Global Forwarding is the most eligible company in Syria to arrange the import of such material through its worldwide network.  Kits types may include (but not limited to) the following types.\r\n•	Hygiene Kits\r\n•	Clothing Kits\r\n•	Food Kits\r\n•	Baby Kits\r\n•	Plastic Sheets\r\n•	School Kits\r\n•	Mosquito Nets'),
+(28, 16, 1, 1, 12, 'Aid & Relief Services 0101', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">AID &amp; RELIEF SERVICES</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Due to the need of logistics services for the humanitarian aid across the country, DHL Global Forwarding -Syria<br />\r\nset up a department under the name of Aid &amp; Relief Services responsible for the Humanitarian Aid Logistics<br />\r\nwithin Syria through the following services</strong></span></span></p>', 'Due to the need of logistics services for the humanitarian aid across the country, DHL Global Forwarding -Syria set up a department under the name of Aid & Relief Services responsible for the Humanitarian Aid Logistics within Syria through the following services:\r\n1.	Transportation  \r\n•	Primary Transportation, from Syrian Ports (Lattakia & Tartous) or from Lebanon and Jordan borders to our warehouses.\r\n•	Secondary Transportation, from local warehouses or directly from Ports to all Cities in Syria, according to a pre-defined monthly cycle.\r\n2.	Charters\r\nCargo Charters to difficult-to-access and faraway areas within Syria\r\n\r\n3.	Customs Clearance\r\nDone at Ports and Borders as a supporting service to the transportation operations and for urgent Aid & Relief shipments, we arrange direct withdrawal (when required) to speed up the delivery process and settle the declarations later on.\r\n\r\n\r\n4.	Warehousing\r\n•	Dedicated warehouses with full warehousing management services for UN Agencies and NGOs which have huge operations in any location in Syria \r\n•	Multi-Customer warehousing services for UN Agencies and NGOs which need temporary services for small operations at our DHL Facility in Damascus \r\n5.	Packaging\r\nAid & Relief Packaging Department was established to provide re-packing and re-bagging services of a monthly pre-defined content of Aid & Relief Family Food and Non-Food Rations. These services are done through:\r\n•	Well trained staff with high productivity performance\r\n•	Ability to work 24 hours on shifts basis\r\n•	Ability to supply all kinds of packing equipment and packing materials\r\n•	Safety & Hygiene standards are strictly implemented\r\n\r\n6.	Supply\r\nDHL Global Forwarding can supply raw materials, re-pack them into kits and deliver them to the service requester as per the standards required by any UN Agency or Humanitarian Organization, giving priority to the local market in order to support the local Syrian families as per DHL Global Forwarding Aid & Relief policies which are in line with UN agencies and other humanitarian organizations. However, when the raw materials must be imported, DHL Global Forwarding is the most eligible company in Syria to arrange the import of such material through its worldwide network.  Kits types may include (but not limited to) the following types.\r\n•	Hygiene Kits\r\n•	Clothing Kits\r\n•	Food Kits\r\n•	Baby Kits\r\n•	Plastic Sheets\r\n•	School Kits\r\n•	Mosquito Nets'),
 (29, 17, 1, 1, 12, 'Corporate Social Responsibility', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:left\"><span style=\"font-size:16.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Corporate Social Responsibility</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">We follow Deutsche Post DHL Corporate Responsibility and mostly we focus on </span></span></span></p>\r\n\r\n<ol>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong><span style=\"font-size:12.0pt\">Environment protection </span></strong></span></span></li>\r\n</ol>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Committed to sustainable development, we create innovative, effective, environmentally friendly logistics services that fulfill customer\'s needs, while minimizing undesirable impacts. (Policy Enclosed)</span></span></span></p>\r\n\r\n<ol start=\"2\">\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong><span style=\"font-size:12.0pt\">Culture Support &nbsp; </span></strong></span></span></li>\r\n</ol>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">DHL Global Forwarding Syria has launched its project of sponsoring, encouraging and spreading Culture in all its aspects in Syria. </span></span></span></p>\r\n\r\n<ul style=\"list-style-type:square\">\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Sponsorship of photo Exhibition &ldquo;Dervish Rituals&rdquo; by a Syrian artist. The exhibition was held in the historical hall of Khan As&rsquo;ad Pasha under the high auspices of the Syrian Minister of Culture in&nbsp;2007. </span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Sponsorship of a Jazz concert performed by a specialized Russian Band in Damascus in 2007</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Sponsorship of the shielding cover when Salahuddin Ayyubi statue was under restoration in 2007.</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Partnership in the International Violin Competition with Solhi Al Wadi Institute of Music in 2008</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Sponsoring Yes Academy &quot;Youth Excellence on Stage&quot; in 2010</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Sponsoring Jazz Lives in 2010 </span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Sponsoring the Visual arts festival in Damascus in 2010</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Sponsoring &ldquo;</span><span style=\"font-size:12.0pt\">T</span><span style=\"font-size:12.0pt\">he Mirror&rdquo; play performed by </span><span style=\"font-size:12.0pt\">the university team</span><span style=\"font-size:12.0pt\"> of the &ldquo;Lady of Damascus&rdquo; Church</span> <span style=\"font-size:12.0pt\">in 2015.</span></span></span></li>\r\n</ul>\r\n\r\n<p style=\"margin-left:0cm; margin-right:36pt; text-align:left\">&nbsp;</p>\r\n\r\n<ol start=\"3\">\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong><span style=\"font-size:12.0pt\">Syrian Youth Development Initiative </span></strong></span></span></li>\r\n</ol>\r\n\r\n<p style=\"margin-left:0cm; margin-right:36pt; text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Due to the impacts caused by the Syrian crisis, there was a clear need to switch CSR into this phase priorities, Syrian youth need tools to enable them enhance their knowledge and skills, which will prepare them for better future and empower them to be part of the reconstruction of Syria; thus we launched the &ldquo;<strong>Syrian Youth Development Initiative&rdquo;</strong> </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:36pt; text-align:left\">&nbsp;</p>\r\n\r\n<ul style=\"list-style-type:square\">\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">AKDN - Aga Khan Development Network</span></span></span></li>\r\n</ul>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">In 2017 we signed MoU with AKDN to donate books to a prototype library established recently by AKDN in an elementary school in Damascus old city that has 425 students. The 408 donated books varied among encyclopedias, cultural books, educational books, and purposeful stories.</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:36pt; text-align:left\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:36pt; text-align:left\">&nbsp;</p>\r\n\r\n<ul style=\"list-style-type:square\">\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">SOS - SOS Children&rsquo;s Villages</span></span></span></li>\r\n</ul>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">As part of Deutsche Post DHL Group-wide program &ldquo;GoTeach&rdquo;, we work together with international partners to improve educational opportunity and employability for young people, especially those from disadvantaged socio-economic backgrounds.</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Deutsche Post DHL Group and&nbsp;</span><a href=\"http://www.dpdhl.com/en/sitemap/disclaimer.html?ref=URJ+gUERGT0ryrNE5eQGEzDaNPeknX6PBvkHO7SNl3ATnJd6gWkb9w==\">SOS Children\'s Villages</a><span style=\"font-size:12.0pt\">&nbsp;International have been partners in the GoTeach program since 2011.&nbsp;</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">The partnership covers a wide variety of activities; these can be clustered into the following categories:</span></span></span></p>\r\n\r\n<ul>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Job orientation &ndash; to educate teens about the job market</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Soft and basic skills training &ndash; to enable access to the job market</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Exposure to professional working environment &ndash; to gain initial work experience</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">Training and support for establishing own businesses</span></span></span></li>\r\n</ul>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:left\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:12.0pt\">The program started in four countries in 2011 and expanded rapidly to 26 countries worldwide by 2015 and in 2017 it was launched in Syria.</span></span></span></p>\r\n\r\n<p><span style=\"font-size:12.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">In Syria DGF support SOS by training a group of SOS youths on the above categories by specialized DHL trainers. The project started in 2017 and is still ongoing </span></span></p>', 'We follow Deutsche Post DHL Corporate Responsibility and mostly we focus on \r\n1.	Environment protection \r\nCommitted to sustainable development, we create innovative, effective, environmentally friendly logistics services that fulfill customer\'s needs, while minimizing undesirable impacts. (Policy Enclosed)\r\n2.	Culture Support   \r\nDHL Global Forwarding Syria has launched its project of sponsoring, encouraging and spreading Culture in all its aspects in Syria. \r\n	Sponsorship of photo Exhibition “Dervish Rituals” by a Syrian artist. The exhibition was held in the historical hall of Khan As’ad Pasha under the high auspices of the Syrian Minister of Culture in 2007. \r\n	Sponsorship of a Jazz concert performed by a specialized Russian Band in Damascus in 2007\r\n	Sponsorship of the shielding cover when Salahuddin Ayyubi statue was under restoration in 2007.\r\n	Partnership in the International Violin Competition with Solhi Al Wadi Institute of Music in 2008\r\n	Sponsoring Yes Academy \"Youth Excellence on Stage\" in 2010\r\n	Sponsoring Jazz Lives in 2010 \r\n	Sponsoring the Visual arts festival in Damascus in 2010\r\n	Sponsoring “The Mirror” play performed by the university team of the “Lady of Damascus” Church in 2015.\r\n\r\n3.	Syrian Youth Development Initiative \r\nDue to the impacts caused by the Syrian crisis, there was a clear need to switch CSR into this phase priorities, Syrian youth need tools to enable them enhance their knowledge and skills, which will prepare them for better future and empower them to be part of the reconstruction of Syria; thus we launched the “Syrian Youth Development Initiative” \r\n\r\n	AKDN - Aga Khan Development Network\r\nIn 2017 we signed MoU with AKDN to donate books to a prototype library established recently by AKDN in an elementary school in Damascus old city that has 425 students. The 408 donated books varied among encyclopedias, cultural books, educational books, and purposeful stories.\r\n\r\n\r\n	SOS - SOS Children’s Villages\r\nAs part of Deutsche Post DHL Group-wide program “GoTeach”, we work together with international partners to improve educational opportunity and employability for young people, especially those from disadvantaged socio-economic backgrounds.\r\nDeutsche Post DHL Group and SOS Children\'s Villages International have been partners in the GoTeach program since 2011. \r\nThe partnership covers a wide variety of activities; these can be clustered into the following categories:\r\n•	Job orientation – to educate teens about the job market\r\n•	Soft and basic skills training – to enable access to the job market\r\n•	Exposure to professional working environment – to gain initial work experience\r\n•	Training and support for establishing own businesses\r\nThe program started in four countries in 2011 and expanded rapidly to 26 countries worldwide by 2015 and in 2017 it was launched in Syria.\r\nIn Syria DGF support SOS by training a group of SOS youths on the above categories by specialized DHL trainers. The project started in 2017 and is still ongoing'),
 (30, 18, 2, 1, 12, 'Nazha Logistics 0102', NULL, '<p style=\"text-align:center\"><span style=\"font-size:14px\">Nazha Logistics is the Exclusive Agent of DHL Global Forwarding / DHL Freight in Syria and the logistics market leader locally.<br />\r\nDHL is present in over 220 countries and territories across the globe, making it the most international company in the world.<br />\r\nWith a workforce exceeding 350,000 employees, DHL provides solutions for an almost infinite number of logistics needs.</span></p>', 'Nazha Logistics is the Exclusive Agent of DHL Global Forwarding / DHL Freight in Syria and the logistics market leader locally.\r\nDHL is present in over 220 countries and territories across the globe, making it the most international company in the world.\r\nWith a workforce exceeding 350,000 employees, DHL provides solutions for an almost infinite number of logistics needs.\r\n\r\nWe signify the “One Stop Shopping” concept with the full range of logistic products we provide starting from\r\nthe basic conventional freight services fulfilling the small customers demand up to the most complicated\r\n“Customer Program Management” systems which we provide to our Multi National Customers.'),
 (31, 19, 1, 1, 12, 'Quality Assurance', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">QUALITY&nbsp;ASSURANCE</span></span></span></p>', 'Nazha Logistics the Exclusive Agent of DHL Global Forwarding in Syria believes that success depends on the supply of high quality logistic services that meet or exceed customer expectations. \r\nThe Quality Policy of Nazha Logistics indicates the basic principles that control our business and the commitment that the logistic services we provide to our customers shall be the best possible available in the market.\r\n(full quality policy is enclosed)'),
@@ -168,15 +162,15 @@ INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`
 (35, 23, 1, 1, 6, 'Air Freight 0201', 'Middle 1 - 600 x 400.jpg', NULL, NULL),
 (36, 23, 2, 1, 6, 'Air Freight 0202', 'Middle 2.jpg', NULL, NULL),
 (37, 24, 1, 1, 12, 'Air Freight 0401', 'Slider 1.jpg', NULL, NULL),
-(38, 24, 2, 1, 12, 'Air Freight 0402', 'Slider 2.jpg', NULL, NULL);
-INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`, `dblk_type`, `dblk_name`, `dblk_image`, `dblk_text`, `dblk_stext`) VALUES
+(38, 24, 2, 1, 12, 'Air Freight 0402', 'Slider 2.jpg', NULL, NULL),
 (39, 24, 1, 1, 12, 'Air Freight 0403', 'Slider 3.jpg', NULL, NULL),
 (40, 24, 1, 1, 12, 'Air Freight 0404', 'Slider 4.jpg', NULL, NULL),
 (41, 24, 1, 1, 12, 'Air Freight 0405', 'Slider 5.jpg', NULL, NULL),
 (42, 24, 1, 1, 12, 'Air Freight 0406', 'Slider 6.jpg', NULL, NULL),
 (43, 24, 1, 1, 12, 'Air Freight 0407', 'Slider 7.jpg', NULL, NULL),
 (44, 24, 1, 1, 12, 'Air Freight 0408', 'Slider 8.jpg', NULL, NULL),
-(45, 25, 1, 1, 2, 'SYDI 0101', NULL, '<p></p>', NULL),
+(45, 25, 1, 1, 2, 'SYDI 0101', NULL, '<p></p>', NULL);
+INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`, `dblk_type`, `dblk_name`, `dblk_image`, `dblk_text`, `dblk_stext`) VALUES
 (46, 26, 1, 1, 12, 'SYDI 0201', NULL, '<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong>AKDN - Aga Khan Development Network</strong></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:14px\">In 2017 we signed MoU with AKDN to donate books to a prototype library</span><br />\r\n<span style=\"font-size:14px\">established recently by AKDN in an elementary school in Damascus old city that has 425 students. The 408 donated</span><br />\r\nbooks varied among encyclopedias, cultural books, educational books, and purposeful stories.</p>', NULL),
 (47, 27, 1, 1, 6, 'SYDI 0301', 'Middle 1.jpg', NULL, NULL),
 (48, 27, 2, 1, 6, 'SYDI 0302', 'Middle 2(1).jpg', NULL, NULL),
@@ -201,6 +195,8 @@ INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`
 (68, 31, 3, 1, 12, 'oc03', 'Slider 4(2).jpg', NULL, NULL),
 (69, 31, 4, 1, 12, 'oc4', 'Slider 5(2).jpg', NULL, NULL),
 (70, 32, 1, 1, 12, 'Ocean Freight 0301', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:18px\"><strong><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">Added value services </span></strong></span></p>\r\n\r\n<p style=\"text-align:center\"><br />\r\n<span style=\"font-size:16px\"><span style=\"color:#d40511\">OCEAN ASSEMBLY</span></span><strong><span style=\"color:#d40511\"><span style=\"font-size:11pt\"> </span> </span> </strong><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-size:10.0pt\"><span style=\"font-size:14px\">Single &amp; multi country consolidation</span> </span> </span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><span style=\"color:#d40511\">OCEAN CHARTER</span></span><strong><span style=\"color:#d40511\"><span style=\"font-size:11pt\"> </span> </span> </strong><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-size:10.0pt\"><span style=\"font-size:14px\">Cargo vessel charter</span> </span> </span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><span style=\"color:#d40511\">FLEXITANKS</span><strong><span style=\"color:#d40511\"> </span> </strong></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-size:10.0pt\"><span style=\"font-size:14px\">Transportation of bulk-liquids</span> </span> </span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><span style=\"color:#d40511\">OCEAN THERMONET</span></span><strong><span style=\"color:#d40511\"><span style=\"font-size:11pt\"> </span> </span> </strong><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-size:14px\">Temperature Controlled Ocean Freight </span> </span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><span style=\"color:#d40511\">CROSS TRADE</span></span><strong><span style=\"color:#d40511\"><span style=\"font-size:11pt\"> </span> </span> </strong><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-size:10.0pt\"><span style=\"font-size:14px\">Moving shipments between two countries regardless of customer location</span> </span> </span></p>', 'added value services \r\n•	OCEAN ASSEMBLY - Single & multi country consolidation\r\n•	OCEAN CHARTER - Cargo vessel charter\r\n•	FLEXITANKS - Transportation of bulk-liquids\r\n•	OCEAN THERMONET - Temperature Controlled Ocean Freight\r\n•	Cross Trade – moving shipments between two countries regardless of customer location'),
+(76, 9, 2, 1, 4, 'leftRD', NULL, NULL, NULL),
+(77, 9, 3, 1, 8, 'CenterRD', NULL, '<ul>\r\n	<li style=\"text-align:start\"><span style=\"font-size:14px\"><strong><span style=\"font-family:Arial,Helvetica,sans-serif\">FTL Full Truck Load service</span></strong></span></li>\r\n	<li style=\"text-align:start\"><span style=\"font-size:14px\"><strong><span style=\"font-family:Arial,Helvetica,sans-serif\">PTL Part Truck Load service</span></strong></span></li>\r\n	<li style=\"text-align:start\"><span style=\"font-size:14px\"><strong><span style=\"font-family:Arial,Helvetica,sans-serif\">LTL Less than Truck Load service</span></strong></span></li>\r\n	<li style=\"text-align:start\"><span style=\"font-size:14px\"><strong><span style=\"font-family:Arial,Helvetica,sans-serif\">Transshipping services</span></strong></span></li>\r\n</ul>\r\n\r\n<p style=\"text-align:left\">&nbsp;</p>', NULL),
 (78, 33, 3, 1, 10, 'Road03', NULL, '<ul>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"><span style=\"color:#cc0033\">Direct pick-up and delivery service using one vehicle, dedicated to your shipment</span></span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"><span style=\"color:#cc0033\">DHL Freight managed and quality-measured transport fleet</span></span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"><span style=\"color:#cc0033\">Service embedded in DHL Freight&rsquo;s international network, with 208 terminals across Europe</span></span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"><span style=\"color:#cc0033\">Defined lead times based on origin/destination</span></span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"><span style=\"color:#cc0033\">Support provided via direct contact with local DHL Freight experts</span></span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"><span style=\"color:#cc0033\">Proof of delivery (POD)</span></span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"><span style=\"color:#cc0033\">Transportation of dangerous goods</span></span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"><span style=\"color:#cc0033\">Additional insurance</span></span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\"><span style=\"color:#cc0033\">Individual performance reports</span></span></span></span></li>\r\n</ul>', 'Value Added Services:\r\n•	Direct pick-up and delivery service using one vehicle, dedicated to your shipment\r\n•	DHL Freight managed and quality-measured transport fleet\r\n•	Service embedded in DHL Freight’s international network, with 208 terminals across Europe\r\n•	Defined lead times based on origin/destination\r\n•	Support provided via direct contact with local DHL Freight experts\r\n•	Proof of delivery (POD)\r\n•	Transportation of dangerous goods\r\n•	Additional insurance\r\n•	Individual performance reports'),
 (79, 33, 2, 1, 2, 'Road left0', NULL, NULL, NULL),
 (81, 21, 0, 1, 3, 'Empty 3 Cols', NULL, NULL, NULL),
@@ -214,7 +210,10 @@ INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`
 (92, 37, 3, 1, 12, 'Warehousing 0404', 'Slider 4(3).jpg', NULL, NULL),
 (93, 37, 4, 1, 12, 'Warehousing 0405', 'Slider 5(3).jpg', NULL, NULL),
 (94, 37, 5, 1, 12, 'Warehousing 0406', 'Slider 6(2).jpg', NULL, NULL),
-(95, 36, 1, 1, 12, 'Warehousing 0101', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">WAREHOUSING</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\"><span><spa>We offer warehouse management at any location in the country based on customer requirements.</span></span><br />\r\n<span><strong>Our Warehousing Solutions</strong> improve inventory efficiency and accelerate your response to changing customer demand. Our experts design, implement, and operate flexible warehousing and distribution solutions tailored to your business needs. They analyze every point in your supply chain to determine the optimal solution.</span></span><br />\r\n<br />\r\n<span style=\"font-size:16px\"><span><strong>Warehousing Services</strong></span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:14px\"><span>Dedicated Warehouses </span></span><br />\r\n<span style=\"font-size:14px\"><span>Multi Customer Warehousing </span></span><br />\r\n<span style=\"font-size:14px\"><span>Ambient and temperature-controlled facilities</span></span><br />\r\n<span style=\"font-size:14px\"><span>Storage, pick, pack and dispatch</span></span><br />\r\n<span style=\"font-size:14px\"><span>Delivery and returns management</span></span></p>', NULL),
+(95, 36, 1, 1, 12, 'Warehousing 0101', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:20px\"><span style=\"color:#d40511\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">WAREHOUSING</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:36pt; text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">We offer warehouse management at any location in the country based on customer requirements.</span></span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Our Warehousing Solutions</strong> improve inventory efficiency and accelerate your response to changing customer demand. Our experts design, implement, and operate flexible warehousing and distribution solutions tailored to your business needs. They analyze every point in your supply chain to determine the optimal solution.</span></span><br />\r\n<br />\r\n<span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Warehousing Services</strong></span></span></p>', NULL),
+(96, 36, 4, 1, 4, 'Warehousing 010203', NULL, NULL, NULL),
+(97, 36, 2, 1, 4, 'Warehousing 010201', NULL, NULL, NULL),
+(98, 36, 3, 1, 4, 'Warehousing 010202', NULL, '<ul>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Dedicated Warehouses </span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Multi Customer Warehousing </span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Ambient and temperature-controlled facilities</span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Storage, pick, pack and dispatch</span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Delivery and returns management</span></span></li>\r\n</ul>', NULL),
 (100, 38, 1, 1, 12, 'Packing & Removal 0301', NULL, '<p style=\"text-align:center\"><span style=\"font-size:16px\"><span style=\"color:#d40511\"><strong>Packing Steps</strong></span></span><br/><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Our packing process has a defined outline, solid to ensure our customers trust and peace of mind, flexible enough to adjust according to needed requirements. Don&rsquo;t wait until you have a moving day. Contact us at least one month before you intend to move, we will then work with you to help you through the process.</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"color:#d40511\">Assessment</span></span></strong></span><br/><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Our Experts will undertake an assessment survey to estimate our customers&rsquo; requirements and needs.</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"color:#d40511\">Offer</span></span></strong></span><br/><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">will be submitted promptly after thorough study.</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><span style=\"color:#d40511\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Plan</span></span></strong></span><br/><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">a plan will be developed tailor made to fit each customer&rsquo;s requirements and commodities.</span></span></p>', NULL),
 (101, 39, 1, 1, 12, 'Packing & Removal 0201', 'Slider 1(2).jpg', NULL, NULL),
 (102, 39, 2, 1, 12, 'Packing & Removal 0202', 'Slider 2(4).jpg', NULL, NULL),
@@ -278,6 +277,12 @@ INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`
 (163, 57, 3, 1, 12, 'Quality Assurance 0203', 'Slider 3(9).jpg', NULL, NULL),
 (164, 57, 4, 1, 12, 'Quality Assurance 0204', 'Slider 4(9).jpg', NULL, NULL),
 (165, 57, 5, 1, 12, 'Quality Assurance 0205', 'Slider 5(8).jpg', NULL, NULL),
+(166, 11, 3, 1, 2, 'Customs Clearance 010102', NULL, '<p><span style=\"font-size:14px\"><strong><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Airports</span></span></span></strong></span></p>', 'We have long experience in customs clearance we handle clearance at \r\nAirports\r\nPorts\r\nCross borders\r\nCustoms secretariats \r\nFree Zones. \r\nClearing Services offered are :\r\nImport Customs Clearance \r\nExport Clearance \r\nTransit Customs Clearance \r\nCustoms Approval follow up \r\nImport License follow up \r\nAnalysis follow up \r\nRange of additional clearance services based on shipment purpose'),
+(167, 11, 4, 1, 2, 'Customs Clearance 010103', NULL, '<p style=\"text-align:left\"><span style=\"font-size:14px\"><strong><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Ports</span></span></span></strong></span></p>', 'We have long experience in customs clearance we handle clearance at \r\nAirports\r\nPorts\r\nCross borders\r\nCustoms secretariats \r\nFree Zones. \r\nClearing Services offered are :\r\nImport Customs Clearance \r\nExport Clearance \r\nTransit Customs Clearance \r\nCustoms Approval follow up \r\nImport License follow up \r\nAnalysis follow up \r\nRange of additional clearance services based on shipment purpose'),
+(169, 11, 2, 1, 2, 'Customs Clearance 010101', NULL, NULL, 'We have long experience in customs clearance we handle clearance at \r\nAirports\r\nPorts\r\nCross borders\r\nCustoms secretariats \r\nFree Zones. \r\nClearing Services offered are :\r\nImport Customs Clearance \r\nExport Clearance \r\nTransit Customs Clearance \r\nCustoms Approval follow up \r\nImport License follow up \r\nAnalysis follow up \r\nRange of additional clearance services based on shipment purpose'),
+(171, 11, 5, 1, 2, 'Customs Clearance 010104', NULL, '<p style=\"text-align:left\"><span style=\"font-size:14px\"><strong><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Cross borders</span></span></span></strong></span></p>', 'We have long experience in customs clearance we handle clearance at \r\nAirports\r\nPorts\r\nCross borders\r\nCustoms secretariats \r\nFree Zones. \r\nClearing Services offered are :\r\nImport Customs Clearance \r\nExport Clearance \r\nTransit Customs Clearance \r\nCustoms Approval follow up \r\nImport License follow up \r\nAnalysis follow up \r\nRange of additional clearance services based on shipment purpose'),
+(172, 11, 6, 1, 2, 'Customs Clearance 010105', NULL, '<p style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\"><strong>Customs secretariats</strong></span></span></span></span></p>', 'We have long experience in customs clearance we handle clearance at \r\nAirports\r\nPorts\r\nCross borders\r\nCustoms secretariats \r\nFree Zones. \r\nClearing Services offered are :\r\nImport Customs Clearance \r\nExport Clearance \r\nTransit Customs Clearance \r\nCustoms Approval follow up \r\nImport License follow up \r\nAnalysis follow up \r\nRange of additional clearance services based on shipment purpose'),
+(173, 11, 7, 1, 2, 'Customs Clearance 010106', NULL, '<p style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\"><strong>Free Zones</strong></span></span></span></span></p>', 'We have long experience in customs clearance we handle clearance at \r\nAirports\r\nPorts\r\nCross borders\r\nCustoms secretariats \r\nFree Zones. \r\nClearing Services offered are :\r\nImport Customs Clearance \r\nExport Clearance \r\nTransit Customs Clearance \r\nCustoms Approval follow up \r\nImport License follow up \r\nAnalysis follow up \r\nRange of additional clearance services based on shipment purpose'),
 (174, 58, 1, 1, 6, 'Customs Clearance 0201', 'Twin photos 1.jpg', NULL, NULL),
 (175, 58, 2, 1, 6, 'Customs Clearance 0202', 'Twin photos 2.jpg', NULL, NULL),
 (176, 60, 1, 1, 6, 'Customs Clearance 0401', 'Twin photos 3.jpg', NULL, NULL),
@@ -285,7 +290,8 @@ INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`
 (178, 59, 1, 1, 6, 'Customs Clearance 0301', NULL, '<p style=\"text-align:center\"><span style=\"font-size:18px\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Clearing Services offered are</span></strong></span></span></p>', 'Clearing Services offered are :\r\n\r\n    Import Customs Clearance\r\n    Export Clearance\r\n    Transit Customs Clearance\r\n    Customs Approval follow up\r\n    Import License follow up\r\n    Analysis follow up\r\n    Range of additional clearance services based on shipment purpose'),
 (180, 59, 3, 1, 6, 'Customs Clearance 0303', NULL, '<ul>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Import Customs Clearance </span></strong></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Export Clearance </span></strong></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Transit Customs Clearance </span></strong></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Customs Approval follow up </span></strong></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Import License follow up </span></span></strong></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Analysis follow up </span></strong></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">Range of additional clearance services based on shipment purpose </span></span></strong></span></li>\r\n</ul>', 'Clearing Services offered are :\r\n\r\n    Import Customs Clearance\r\n    Export Clearance\r\n    Transit Customs Clearance\r\n    Customs Approval follow up\r\n    Import License follow up\r\n    Analysis follow up\r\n    Range of additional clearance services based on shipment purpose'),
 (181, 61, 1, 1, 12, 'Aid & Relief Services 0301', NULL, '<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Transportation</span></strong></span><br/><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Primary Transportation, from Syrian Ports (Lattakia &amp; Tartous) or from Lebanon and Jordan borders to our warehouses.</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Secondary Transportation, from local warehouses or directly from Ports to all Cities in Syria, according to a pre-defined monthly cycle.</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Charters</strong></span></span><br />\r\n<span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Cargo Charters to difficult-to-access and faraway areas within Syria</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Customs Clearance</strong></span></span><br />\r\n<span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Done at Ports and Borders as a supporting service to the transportation operations and for urgent Aid &amp; Relief shipments, we<br />\r\narrange direct withdrawal (when required) to speed up the delivery process and settle the declarations later on.</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Warehousing</span></strong></span><br/><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Dedicated warehouses with full warehousing management services for UN Agencies and NGOs which have huge operations in any location in Syria </span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Multi-Customer warehousing services for UN Agencies and NGOs which need temporary services for small operations at our DHL Facility in Damascus </span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Packaging</span></strong></span><br/><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Aid &amp; Relief Packaging Department was established to provide re-packing and re-bagging services of a monthly pre-defined content<br />\r\nof Aid &amp; Relief Family Food and Non-Food Rations. These services are done through:</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Well trained staff with high productivity performance</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Ability to work 24 hours on shifts basis</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Ability to supply all kinds of packing equipment and packing materials</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Safety &amp; Hygiene standards are strictly implemented</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Supply</span></strong></span><br/><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">DHL Global Forwarding can supply raw materials, re-pack them into kits and deliver them to the service requester as per the standards required by any UN Agency or Humanitarian Organization, giving priority to the local market in order to support the local Syrian families as per DHL Global Forwarding Aid &amp; Relief policies which are in line with UN agencies and other humanitarian organizations. However, when the raw materials must be imported, DHL Global Forwarding is the most eligible company in Syria to arrange the import of such material through its worldwide network.&nbsp; Kits types may include (but not limited to) the following types.</span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Hygiene Kits</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Clothing Kits</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Food Kits</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Baby Kits</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Plastic Sheets</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">School Kits</span><br />\r\n<span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Mosquito Nets</span></span></p>', 'AID & RELIEF SERVICES\r\n\r\nDue to the need of logistics services for the humanitarian aid across the country, DHL Global Forwarding -Syria set up a department under the name of Aid & Relief Services responsible for the Humanitarian Aid Logistics within Syria through the following services\r\n\r\n    Transportation \r\n        Primary Transportation, from Syrian Ports (Lattakia & Tartous) or from Lebanon and Jordan borders to our warehouses.\r\n        Secondary Transportation, from local warehouses or directly from Ports to all Cities in Syria, according to a pre-defined monthly cycle.\r\n    Charters\r\n    Cargo Charters to difficult-to-access and faraway areas within Syria\r\n\r\n\r\n    Customs Clearance\r\n    Done at Ports and Borders as a supporting service to the transportation operations and for urgent Aid & Relief shipments, we arrange direct withdrawal (when required) to speed up the delivery process and settle the declarations later on.\r\n\r\n    Warehousing\r\n        Dedicated warehouses with full warehousing management services for UN Agencies and NGOs which have huge operations in any location in Syria\r\n        Multi-Customer warehousing services for UN Agencies and NGOs which need temporary services for small operations at our DHL Facility in Damascus \r\n    Packaging\r\n\r\nAid & Relief Packaging Department was established to provide re-packing and re-bagging services of a monthly pre-defined content of Aid & Relief Family Food and Non-Food Rations. These services are done through:\r\n\r\n        Well trained staff with high productivity performance\r\n        Ability to work 24 hours on shifts basis\r\n        Ability to supply all kinds of packing equipment and packing materials\r\n        Safety & Hygiene standards are strictly implemented\r\n\r\n\r\n    Supply\r\n\r\nDHL Global Forwarding can supply raw materials, re-pack them into kits and deliver them to the service requester as per the standards required by any UN Agency or Humanitarian Organization, giving priority to the local market in order to support the local Syrian families as per DHL Global Forwarding Aid & Relief policies which are in line with UN agencies and other humanitarian organizations. However, when the raw materials must be imported, DHL Global Forwarding is the most eligible company in Syria to arrange the import of such material through its worldwide network.  Kits types may include (but not limited to) the following types.\r\n\r\n        Hygiene Kits\r\n        Clothing Kits\r\n        Food Kits\r\n        Baby Kits\r\n        Plastic Sheets\r\n        School Kits\r\n\r\nMosquito Nets'),
-(182, 62, 1, 1, 6, 'Aid & Relief Services 0201', 'Twin 1(1).jpg', NULL, NULL),
+(182, 62, 1, 1, 6, 'Aid & Relief Services 0201', 'Twin 1(1).jpg', NULL, NULL);
+INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`, `dblk_type`, `dblk_name`, `dblk_image`, `dblk_text`, `dblk_stext`) VALUES
 (183, 62, 1, 1, 6, 'Aid & Relief Services 0202', 'Twin 2(1).jpg', NULL, NULL),
 (184, 63, 1, 1, 12, 'Aid & Relief Services 0401', 'Slider 1(8).jpg', NULL, NULL),
 (185, 63, 2, 1, 12, 'Aid & Relief Services 0402', 'Slider 2(10).jpg', NULL, NULL),
@@ -298,8 +304,7 @@ INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`
 (196, 25, 3, 1, 2, 'SYDI 0103', NULL, '<p><img alt=\"\" src=\"assets/img/icons/mi_SYDI(1).png\" style=\"max-width:100px; width:100%\" /></p>', NULL),
 (197, 65, 1, 1, 6, 'SYDI 0301', 'Twin 1.jpg', NULL, NULL),
 (198, 65, 2, 1, 6, 'SYDI 0302', 'Twin 2.jpg', NULL, NULL),
-(199, 64, 1, 1, 12, 'SYDI 0201', NULL, '<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong>The Family of University Parish</strong></span><br />\r\n<span style=\"font-size:14px\">The Family of University Parish was founded in 1968 by Father Elias Zahlawi at the Lady of Damascus Church.<br />\r\nThe Parish has adopted the theatrical works to enhance self-knowledge, ability to express and strengthen self-confidence of its members.<br />\r\nObjectives: Social discussions of life topics which university youth interested in &amp; Cultural<br />\r\nawareness of the youth and the expansion of their horizons and knowledge.<br />\r\nIn 2015 we sponsored &ldquo;The Mirror&rdquo;, a theatre play performed by &ldquo;The Lady Of Damascus Church&rdquo; Youth Team.<br />\r\nIn 2018, the 50-year-old parish family presented their new play &ldquo;Shu Shu&rdquo; to deliver their message and we were one of main sponsors.</span></p>', NULL);
-INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`, `dblk_type`, `dblk_name`, `dblk_image`, `dblk_text`, `dblk_stext`) VALUES
+(199, 64, 1, 1, 12, 'SYDI 0201', NULL, '<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong>The Family of University Parish</strong></span><br />\r\n<span style=\"font-size:14px\">The Family of University Parish was founded in 1968 by Father Elias Zahlawi at the Lady of Damascus Church.<br />\r\nThe Parish has adopted the theatrical works to enhance self-knowledge, ability to express and strengthen self-confidence of its members.<br />\r\nObjectives: Social discussions of life topics which university youth interested in &amp; Cultural<br />\r\nawareness of the youth and the expansion of their horizons and knowledge.<br />\r\nIn 2015 we sponsored &ldquo;The Mirror&rdquo;, a theatre play performed by &ldquo;The Lady Of Damascus Church&rdquo; Youth Team.<br />\r\nIn 2018, the 50-year-old parish family presented their new play &ldquo;Shu Shu&rdquo; to deliver their message and we were one of main sponsors.</span></p>', NULL),
 (200, 19, 3, 1, 10, 'Quality Assurance 0103', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:14px\">DHL Global Forwarding Syria pushed by its faith of customer focus and customer satisfaction has established Quality Assurance Department since 2012; to ensure that the products and services provided by the company meet high quality standards and ensure the continuous improvement process of the company to exceed customer expectations.<br />\r\n<br />\r\nWe acquired the quality management system certification ISO 9001:2015 by SGS on November 2018. This certificate enforces our vision as leading logistics services provider in Syria.<br />\r\n<br />\r\nWe created internal quality audit team composed of qualified employees from different departments who are trained by SGS to perform audit based on ISO 9001:2015. The internal quality audits are conducted every quarter for all departments to ensure their total compliance to the set standards.<br />\r\n<br />\r\nWe outlined our vision, mission, and values; which explains how we strive to become and remain the first choice to our customers and what are our values in dealing our business.</span></p>', 'Nazha Logistics the Exclusive Agent of DHL Global Forwarding in Syria believes that success depends on the supply of high quality logistic services that meet or exceed customer expectations. \r\nThe Quality Policy of Nazha Logistics indicates the basic principles that control our business and the commitment that the logistic services we provide to our customers shall be the best possible available in the market.\r\n(full quality policy is enclosed)'),
 (201, 19, 4, 1, 1, 'Quality Assurance 0104', NULL, '<p></p>', 'Nazha Logistics the Exclusive Agent of DHL Global Forwarding in Syria believes that success depends on the supply of high quality logistic services that meet or exceed customer expectations. \r\nThe Quality Policy of Nazha Logistics indicates the basic principles that control our business and the commitment that the logistic services we provide to our customers shall be the best possible available in the market.\r\n(full quality policy is enclosed)'),
 (202, 19, 2, 1, 1, 'Quality Assurance 0102', NULL, NULL, 'Nazha Logistics the Exclusive Agent of DHL Global Forwarding in Syria believes that success depends on the supply of high quality logistic services that meet or exceed customer expectations. \r\nThe Quality Policy of Nazha Logistics indicates the basic principles that control our business and the commitment that the logistic services we provide to our customers shall be the best possible available in the market.\r\n(full quality policy is enclosed)'),
@@ -315,12 +320,12 @@ INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`
 (219, 68, 1, 1, 12, 'Contact BTNs', NULL, '<a class=\"btn ph-menu-link\" data-mid=\"203\" data-mode=\"0\" data-page=\"17\" style=\"width: 20%;background-color: #d40511; border-color: #d40511; color: #ffffff;\">Contact Us</a>\r\n&nbsp;&nbsp;&nbsp;\r\n<a class=\"btn btn-light ph-menu-link\" data-mid=\"203\" data-mode=\"0\" data-page=\"17\" style=\"width: 20%;\">Get a Quote</a>', '<a class=\"btn ph-menu-link\" data-mid=\"203\" data-mode=\"0\" data-page=\"17\" style=\"width: 20%;background-color: #d40511; border-color: #d40511; color: #ffffff;\">Contact Us</a>\r\n&nbsp;&nbsp;&nbsp;\r\n<a class=\"btn btn-light ph-menu-link\" data-mid=\"203\" data-mode=\"0\" data-page=\"17\" style=\"width: 20%;\">Get a Quote</a>'),
 (220, 1, 1, 1, 1, 'Home Welcome 01', NULL, NULL, NULL),
 (221, 1, 3, 1, 1, 'Home Welcome 03', NULL, '<p><img alt=\"\" src=\"assets/img/SGS_ISO-9001_TCL_HR.jpg\" style=\"width:100%; max-width: 80px;\" /></p>', '<p><img alt=\"\" src=\"assets/img/SGS_ISO-9001_TCL_HR.jpg\" style=\"width:100%; max-width: 80px;\" /></p>'),
-(223, 69, 1, 1, 12, 'Complete Logistics Services Brochure', NULL, '<a href=\"http://www.dhl-sy.com/downloads/DHL Complete Logistics Services Brochure - V2.pdf\" target=\"_blank\"><img alt=\"Complete Logistics Services Brochure\" src=\"assets/img/PDF Icon.png\" style=\"width:25px\" /> Complete Logistics Services Brochure</a>', '<p><a href=\"http://www.dhl-sy.com/downloads/DHL Complete Logistics Services Brochure - V2.pdf\" target=\"_blank\"><img alt=\"Complete Logistics Services Brochure\" src=\"assets/img/PDF Icon.png\" style=\"width:25px\" /> Complete Logistics Services Brochure</a></p>'),
+(223, 69, 1, 1, 12, 'Complete Logistics Services Brochure', NULL, '<p><a href=\"http://www.dhl-sy.com/downloads/DHL Complete Logistics Services Brochure - V2.pdf\" target=\"_blank\"><img alt=\"Complete Logistics Services Brochure\" src=\"assets/img/PDF Icon.png\" style=\"width:25px\" /> Complete Logistics Services Brochure</a></p>', '<p><a href=\"http://www.dhl-sy.com/downloads/DHL Complete Logistics Services Brochure - V2.pdf\" target=\"_blank\"><img alt=\"Complete Logistics Services Brochure\" src=\"assets/img/PDF Icon.png\" style=\"width:25px\" /> Complete Logistics Services Brochure</a></p>'),
 (229, 70, 1, 1, 12, 'Code & Vision', NULL, '<a href=\"http://www.dhl-sy.com/downloads/Nazha Logistics Code of Conduct.pdf\" target=\"_blank\"><img alt=\"Code of Conduct\" src=\"assets/img/PDF Icon.png\" style=\"width:25px\" />Code of Conduct</a>&nbsp;&nbsp;&nbsp;\r\n<a href=\"http://www.dhl-sy.com/downloads/Our Vision, Mission and Values.pdf\" target=\"_blank\" style=\"padding-left:5em\"><img alt=\"Our Vision, Mission and Values\" src=\"assets/img/PDF Icon.png\" style=\"width:25px\" />Our Vision, Mission and Values</a>', '<a href=\"http://www.dhl-sy.com/downloads/Nazha Logistics Code of Conduct.pdf\" target=\"_blank\"><img alt=\"Code of Conduct\" src=\"assets/img/PDF Icon.png\" style=\"width:25px\" />Code of Conduct</a>&nbsp;&nbsp;&nbsp;\r\n<a href=\"http://www.dhl-sy.com/downloads/Our Vision, Mission and Values.pdf\" target=\"_blank\" style=\"padding-left:5em\"><img alt=\"Our Vision, Mission and Values\" src=\"assets/img/PDF Icon.png\" style=\"width:25px\" />Our Vision, Mission and Values</a>'),
 (231, 18, 4, 1, 1, 'Nazha Logistics 0104', NULL, '<p>&nbsp;</p>', NULL),
 (232, 18, 6, 1, 1, 'Nazha Logistics 0106', NULL, '<p><img alt=\"\" src=\"assets/img/SGS_ISO-9001_TCL_HR.jpg\" style=\"width:100%; max-width: 150px;\" /></p>', NULL),
 (235, 18, 5, 1, 10, 'Nazha Logistics 0105', NULL, '<p style=\"text-align:center\"><span style=\"font-size:14px\">We signify the &ldquo;One Stop Shopping&rdquo; concept with the full range of logistic products we provide starting from<br />\r\nthe basic conventional freight services fulfilling the small customers demand up to the most complicated<br />\r\n&ldquo;Customer Program Management&rdquo; systems which we provide to our Multi National Customers.</span></p>', 'Nazha Logistics is the Exclusive Agent of DHL Global Forwarding / DHL Freight in Syria and the logistics market leader locally.\r\nDHL is present in over 220 countries and territories across the globe, making it the most international company in the world.\r\nWith a workforce exceeding 350,000 employees, DHL provides solutions for an almost infinite number of logistics needs.\r\n\r\nWe signify the “One Stop Shopping” concept with the full range of logistic products we provide starting from\r\nthe basic conventional freight services fulfilling the small customers demand up to the most complicated\r\n“Customer Program Management” systems which we provide to our Multi National Customers.'),
-(236, 12, 6, 1, 12, 'Warehousing 0305', NULL, '<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:16px\"><span><strong>Inventory Optimization</strong></span></span><br />\r\n<span style=\"font-size:14px\"><span>Through effective inventory management, inefficiencies can be driven out of the supply chain, overall costs reduced and high service levels achieved. We optimize inventory at a line-item level at every stage of the supply chain.</span></span><br />\r\n&nbsp;</p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><span >Multi-Customer Warehousing</span></strong></span><br />\r\n<span style=\"font-size:14px\"><span>Our shared-user facilities are designed to meet the needs of any customer for consumer products, industrial equipment, chemicals and technology.<br />\r\nThrough sharing of DHL\'s resources, such as space, labor, equipment and transportation, customers benefit from synergies that considerably reduce supply chain costs.<br />\r\nThis environment returns significant value to a small business requiring distribution operations without long term lease or capital commitments, or a large enterprise handling a new acquisition, product launches or seasonal overflow</span></span></p>', NULL),
+(236, 12, 6, 1, 12, 'Warehousing 0305', NULL, '<p style=\"margin-left:0cm; margin-right:36pt; text-align:center\"><span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><strong>Inventory Optimization</strong></span></span><br />\r\n<span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Through effective inventory management, inefficiencies can be driven out of the supply chain, overall costs reduced and high service levels achieved. We optimize inventory at a line-item level at every stage of the supply chain.</span></span><br />\r\n&nbsp;</p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Multi-Customer Warehousing</span></strong></span><br />\r\n<span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Our shared-user facilities are designed to meet the needs of any customer for consumer products, industrial equipment, chemicals and technology.<br />\r\nThrough sharing of DHL\'s resources, such as space, labor, equipment and transportation, customers benefit from synergies that considerably reduce supply chain costs.<br />\r\nThis environment returns significant value to a small business requiring distribution operations without long term lease or capital commitments, or a large enterprise handling a new acquisition, product launches or seasonal overflow</span></span></p>', NULL),
 (237, 12, 4, 1, 4, 'Warehousing 010203', NULL, '<ul>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">HSE needs</span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Warehouse Management System (WMS)</span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Insurance coverage</span></span></li>\r\n</ul>', 'We offer warehouse management at any location in the country based on customer requirements.\r\nDHL Global Forwarding Damascus Logistics Facility:\r\nLocated 7 KM from Damascus Airport and 23 KM from Damascus city center.\r\nTotal Land area: 110,000 sqm, out of which 40,000 sqm are encircled by a 3.5 m high fence; this part contains the present warehouses and offices. \r\nTotal Warehouses Space:  5,000 sqm of fully equipped warehouses that will be extended to 14,000 sqm in phase two.\r\nFacility specifications and equipment:\r\n•	Fire alerts, protection and escape routes\r\n•	Security guards \r\n•	Material Handling Equipment\r\n•	Racking & Shelving\r\n•	HSE needs\r\n•	Warehouse Management System (WMS)\r\n•	Insurance coverage\r\n\r\nOur Warehousing Solutions improve inventory efficiency and accelerate your response to changing customer demand. Our experts design, implement, and operate flexible warehousing and distribution solutions tailored to your business needs. They analyze every point in your supply chain to determine the optimal solution.\r\n•	Dedicated Warehouses \r\n•	Multi Customer Warehousing \r\n•	Ambient and temperature-controlled facilities\r\n•	Storage, pick, pack and dispatch\r\n•	Delivery and returns management\r\n\r\nInventory Optimization\r\nThrough effective inventory management, inefficiencies can be driven out of the supply chain, overall costs reduced and high service levels achieved. We optimize inventory at a line-item level at every stage of the supply chain.\r\n\r\nMulti-Customer Warehousing\r\nOur shared-user facilities are designed to meet the needs of any customer for consumer products, industrial equipment, chemicals and technology.\r\nThrough sharing of DHL\'s resources, such as space, labor, equipment and transportation, customers benefit from synergies that considerably reduce supply chain costs.\r\nThis environment returns significant value to a small business requiring distribution operations without long term lease or capital commitments, or a large enterprise handling a new acquisition, product launches or seasonal overflow'),
 (240, 19, 7, 1, 1, 'Quality Assurance 0107', NULL, '<p><img alt=\"\" src=\"assets/img/SGS_ISO-9001_TCL_HR.jpg\" style=\"width:100%; max-width: 80px;\" /></p>', 'Nazha Logistics the Exclusive Agent of DHL Global Forwarding in Syria believes that success depends on the supply of high quality logistic services that meet or exceed customer expectations. \r\nThe Quality Policy of Nazha Logistics indicates the basic principles that control our business and the commitment that the logistic services we provide to our customers shall be the best possible available in the market.\r\n(full quality policy is enclosed)'),
 (241, 19, 5, 1, 1, 'Quality Assurance 0105', NULL, '<p></p>', 'Nazha Logistics the Exclusive Agent of DHL Global Forwarding in Syria believes that success depends on the supply of high quality logistic services that meet or exceed customer expectations. \r\nThe Quality Policy of Nazha Logistics indicates the basic principles that control our business and the commitment that the logistic services we provide to our customers shall be the best possible available in the market.\r\n(full quality policy is enclosed)'),
@@ -336,8 +341,7 @@ INSERT INTO `cpy_block_detail` (`dblk_id`, `blk_id`, `dblk_order`, `dblk_status`
 -- Table structure for table `cpy_menu`
 --
 
-DROP TABLE IF EXISTS `cpy_menu`;
-CREATE TABLE IF NOT EXISTS `cpy_menu` (
+CREATE TABLE `cpy_menu` (
   `menu_id` int(11) NOT NULL,
   `menu_pid` int(11) NOT NULL,
   `menu_rid` int(11) NOT NULL,
@@ -349,14 +353,7 @@ CREATE TABLE IF NOT EXISTS `cpy_menu` (
   `menu_name` varchar(200) NOT NULL,
   `menu_icon` varchar(50) DEFAULT NULL,
   `page_id` int(11) NOT NULL DEFAULT '0',
-  `menu_href` varchar(200) NOT NULL DEFAULT '#',
-  PRIMARY KEY (`menu_id`),
-  KEY `page_id` (`page_id`),
-  KEY `menu_pid` (`menu_pid`),
-  KEY `mode_id` (`mode_id`),
-  KEY `type_id` (`type_id`),
-  KEY `srch_id` (`srch_id`),
-  KEY `menu_rid` (`menu_rid`)
+  `menu_href` varchar(200) NOT NULL DEFAULT '#'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -418,11 +415,9 @@ INSERT INTO `cpy_menu` (`menu_id`, `menu_pid`, `menu_rid`, `mode_id`, `type_id`,
 -- Table structure for table `cpy_menu_mode`
 --
 
-DROP TABLE IF EXISTS `cpy_menu_mode`;
-CREATE TABLE IF NOT EXISTS `cpy_menu_mode` (
-  `mode_id` int(11) NOT NULL AUTO_INCREMENT,
-  `mode_name` varchar(200) NOT NULL,
-  PRIMARY KEY (`mode_id`)
+CREATE TABLE `cpy_menu_mode` (
+  `mode_id` int(11) NOT NULL,
+  `mode_name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -438,13 +433,10 @@ INSERT INTO `cpy_menu_mode` (`mode_id`, `mode_name`) VALUES
 -- Table structure for table `cpy_menu_search`
 --
 
-DROP TABLE IF EXISTS `cpy_menu_search`;
-CREATE TABLE IF NOT EXISTS `cpy_menu_search` (
-  `srch_id` int(11) NOT NULL AUTO_INCREMENT,
-  `srch_name` varchar(200) NOT NULL,
-  PRIMARY KEY (`srch_id`),
-  UNIQUE KEY `srch_name` (`srch_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+CREATE TABLE `cpy_menu_search` (
+  `srch_id` int(11) NOT NULL,
+  `srch_name` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_menu_search`
@@ -460,12 +452,10 @@ INSERT INTO `cpy_menu_search` (`srch_id`, `srch_name`) VALUES
 -- Table structure for table `cpy_menu_type`
 --
 
-DROP TABLE IF EXISTS `cpy_menu_type`;
-CREATE TABLE IF NOT EXISTS `cpy_menu_type` (
-  `type_id` int(11) NOT NULL AUTO_INCREMENT,
-  `type_name` varchar(200) NOT NULL,
-  PRIMARY KEY (`type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+CREATE TABLE `cpy_menu_type` (
+  `type_id` int(11) NOT NULL,
+  `type_name` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_menu_type`
@@ -484,19 +474,16 @@ INSERT INTO `cpy_menu_type` (`type_id`, `type_name`) VALUES
 -- Table structure for table `cpy_news`
 --
 
-DROP TABLE IF EXISTS `cpy_news`;
-CREATE TABLE IF NOT EXISTS `cpy_news` (
-  `news_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cpy_news` (
+  `news_id` int(11) NOT NULL,
   `news_status` smallint(6) NOT NULL DEFAULT '1',
   `type_id` int(11) NOT NULL,
   `news_date` date NOT NULL,
   `news_title` varchar(200) NOT NULL,
   `news_stext` text,
   `news_image` varchar(200) NOT NULL,
-  `news_text` text NOT NULL,
-  PRIMARY KEY (`news_id`),
-  KEY `type_id` (`type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `news_text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_news`
@@ -514,15 +501,12 @@ INSERT INTO `cpy_news` (`news_id`, `news_status`, `type_id`, `news_date`, `news_
 -- Table structure for table `cpy_news_images`
 --
 
-DROP TABLE IF EXISTS `cpy_news_images`;
-CREATE TABLE IF NOT EXISTS `cpy_news_images` (
-  `nimg_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cpy_news_images` (
+  `nimg_id` int(11) NOT NULL,
   `news_id` int(11) NOT NULL,
   `nimg_order` smallint(6) NOT NULL DEFAULT '0',
-  `nimg_photo` varchar(200) NOT NULL,
-  PRIMARY KEY (`nimg_id`),
-  KEY `news_id` (`news_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `nimg_photo` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_news_images`
@@ -541,13 +525,10 @@ INSERT INTO `cpy_news_images` (`nimg_id`, `news_id`, `nimg_order`, `nimg_photo`)
 -- Table structure for table `cpy_news_type`
 --
 
-DROP TABLE IF EXISTS `cpy_news_type`;
-CREATE TABLE IF NOT EXISTS `cpy_news_type` (
-  `type_id` int(11) NOT NULL AUTO_INCREMENT,
-  `type_name` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`type_id`),
-  UNIQUE KEY `type_name` (`type_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+CREATE TABLE `cpy_news_type` (
+  `type_id` int(11) NOT NULL,
+  `type_name` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_news_type`
@@ -563,18 +544,14 @@ INSERT INTO `cpy_news_type` (`type_id`, `type_name`) VALUES
 -- Table structure for table `cpy_page`
 --
 
-DROP TABLE IF EXISTS `cpy_page`;
-CREATE TABLE IF NOT EXISTS `cpy_page` (
-  `page_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cpy_page` (
+  `page_id` int(11) NOT NULL,
   `page_name` varchar(200) NOT NULL,
   `page_status` smallint(6) NOT NULL DEFAULT '1',
   `slid_id` int(11) NOT NULL DEFAULT '1',
   `page_stext` text,
-  `page_desc` text,
-  PRIMARY KEY (`page_id`),
-  UNIQUE KEY `page_name` (`page_name`),
-  KEY `slid_id` (`slid_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+  `page_desc` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_page`
@@ -606,20 +583,16 @@ INSERT INTO `cpy_page` (`page_id`, `page_name`, `page_status`, `slid_id`, `page_
 -- Table structure for table `cpy_page_block`
 --
 
-DROP TABLE IF EXISTS `cpy_page_block`;
-CREATE TABLE IF NOT EXISTS `cpy_page_block` (
-  `pblk_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cpy_page_block` (
+  `pblk_id` int(11) NOT NULL,
   `page_id` int(11) NOT NULL,
   `blk_id` int(11) NOT NULL,
   `pblk_status` smallint(6) NOT NULL DEFAULT '1',
   `pblk_order` smallint(6) NOT NULL DEFAULT '0',
   `pblk_name` varchar(200) NOT NULL,
   `pblk_bgcolor` varchar(50) DEFAULT NULL,
-  `pblk_stext` text,
-  PRIMARY KEY (`pblk_id`),
-  UNIQUE KEY `pblk_name` (`page_id`,`pblk_name`),
-  KEY `blk_id` (`blk_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
+  `pblk_stext` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_page_block`
@@ -654,7 +627,7 @@ INSERT INTO `cpy_page_block` (`pblk_id`, `page_id`, `blk_id`, `pblk_status`, `pb
 (30, 13, 27, 1, 7, 'SYDI 07', '0', NULL),
 (31, 13, 28, 1, 4, 'SYDI 04', '#CECECE', NULL),
 (32, 13, 29, 1, 5, 'SYDI 05', '0', NULL),
-(33, 2, 30, 0, 2, 'Ocean Freight 02', '0', NULL),
+(33, 2, 30, 1, 2, 'Ocean Freight 02', '0', NULL),
 (34, 2, 31, 1, 4, 'Ocean Freight 03', '0', NULL),
 (35, 2, 32, 1, 5, 'Ocean Freight 04', '#CECECE', NULL),
 (36, 3, 33, 1, 4, 'Road Freight 03', '#CECECE', NULL),
@@ -713,13 +686,11 @@ INSERT INTO `cpy_page_block` (`pblk_id`, `page_id`, `blk_id`, `pblk_status`, `pb
 -- Table structure for table `cpy_slider_mst`
 --
 
-DROP TABLE IF EXISTS `cpy_slider_mst`;
-CREATE TABLE IF NOT EXISTS `cpy_slider_mst` (
-  `slid_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cpy_slider_mst` (
+  `slid_id` int(11) NOT NULL,
   `slid_name` varchar(200) NOT NULL,
-  `slid_rem` text,
-  PRIMARY KEY (`slid_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+  `slid_rem` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_slider_mst`
@@ -750,18 +721,15 @@ INSERT INTO `cpy_slider_mst` (`slid_id`, `slid_name`, `slid_rem`) VALUES
 -- Table structure for table `cpy_slider_trn`
 --
 
-DROP TABLE IF EXISTS `cpy_slider_trn`;
-CREATE TABLE IF NOT EXISTS `cpy_slider_trn` (
-  `tslid_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cpy_slider_trn` (
+  `tslid_id` int(11) NOT NULL,
   `slid_id` int(11) NOT NULL,
   `slid_order` smallint(6) NOT NULL DEFAULT '0',
   `slid_header` varchar(200) DEFAULT NULL,
   `slid_text` text,
   `slid_photo` varchar(200) NOT NULL,
-  `slid_link` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`tslid_id`),
-  KEY `slid_id` (`slid_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+  `slid_link` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_slider_trn`
@@ -794,8 +762,7 @@ INSERT INTO `cpy_slider_trn` (`tslid_id`, `slid_id`, `slid_order`, `slid_header`
 -- Stand-in structure for view `cpy_vall`
 -- (See below for the actual view)
 --
-DROP VIEW IF EXISTS `cpy_vall`;
-CREATE TABLE IF NOT EXISTS `cpy_vall` (
+CREATE TABLE `cpy_vall` (
 `page_id` int(11)
 ,`page_name` varchar(200)
 ,`page_status` smallint(6)
@@ -828,8 +795,7 @@ CREATE TABLE IF NOT EXISTS `cpy_vall` (
 -- Stand-in structure for view `cpy_vblock`
 -- (See below for the actual view)
 --
-DROP VIEW IF EXISTS `cpy_vblock`;
-CREATE TABLE IF NOT EXISTS `cpy_vblock` (
+CREATE TABLE `cpy_vblock` (
 `blk_id` int(11)
 ,`blk_name` varchar(200)
 ,`blk_status` smallint(6)
@@ -851,8 +817,7 @@ CREATE TABLE IF NOT EXISTS `cpy_vblock` (
 -- Stand-in structure for view `cpy_vmenu`
 -- (See below for the actual view)
 --
-DROP VIEW IF EXISTS `cpy_vmenu`;
-CREATE TABLE IF NOT EXISTS `cpy_vmenu` (
+CREATE TABLE `cpy_vmenu` (
 `menu_id` int(11)
 ,`menu_pid` int(11)
 ,`menu_pname` varchar(200)
@@ -877,8 +842,7 @@ CREATE TABLE IF NOT EXISTS `cpy_vmenu` (
 -- Stand-in structure for view `cpy_vpage`
 -- (See below for the actual view)
 --
-DROP VIEW IF EXISTS `cpy_vpage`;
-CREATE TABLE IF NOT EXISTS `cpy_vpage` (
+CREATE TABLE `cpy_vpage` (
 `page_id` int(11)
 ,`page_name` varchar(200)
 ,`page_status` smallint(6)
@@ -899,8 +863,7 @@ CREATE TABLE IF NOT EXISTS `cpy_vpage` (
 -- Stand-in structure for view `cpy_vslider`
 -- (See below for the actual view)
 --
-DROP VIEW IF EXISTS `cpy_vslider`;
-CREATE TABLE IF NOT EXISTS `cpy_vslider` (
+CREATE TABLE `cpy_vslider` (
 `slid_id` int(11)
 ,`slid_name` varchar(200)
 ,`slid_rem` text
@@ -918,14 +881,11 @@ CREATE TABLE IF NOT EXISTS `cpy_vslider` (
 -- Table structure for table `phs_metta`
 --
 
-DROP TABLE IF EXISTS `phs_metta`;
-CREATE TABLE IF NOT EXISTS `phs_metta` (
-  `mtta_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `phs_metta` (
+  `mtta_id` int(11) NOT NULL,
   `metta_name` varchar(200) NOT NULL,
-  `metta_value` text NOT NULL,
-  PRIMARY KEY (`mtta_id`),
-  UNIQUE KEY `metta_name` (`metta_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `metta_value` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `phs_metta`
@@ -942,14 +902,11 @@ INSERT INTO `phs_metta` (`mtta_id`, `metta_name`, `metta_value`) VALUES
 -- Table structure for table `phs_perms`
 --
 
-DROP TABLE IF EXISTS `phs_perms`;
-CREATE TABLE IF NOT EXISTS `phs_perms` (
-  `perm_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `phs_perms` (
+  `perm_id` int(11) NOT NULL,
   `pgrp_id` int(11) NOT NULL,
   `perm_table` varchar(255) NOT NULL,
-  `perm_perm` int(11) NOT NULL,
-  PRIMARY KEY (`perm_id`),
-  KEY `pgrp_id` (`pgrp_id`)
+  `perm_perm` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -958,11 +915,9 @@ CREATE TABLE IF NOT EXISTS `phs_perms` (
 -- Table structure for table `phs_pgroup`
 --
 
-DROP TABLE IF EXISTS `phs_pgroup`;
-CREATE TABLE IF NOT EXISTS `phs_pgroup` (
+CREATE TABLE `phs_pgroup` (
   `pgrp_id` int(11) NOT NULL,
-  `pgrp_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`pgrp_id`)
+  `pgrp_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -980,14 +935,11 @@ INSERT INTO `phs_pgroup` (`pgrp_id`, `pgrp_name`) VALUES
 -- Table structure for table `phs_setting`
 --
 
-DROP TABLE IF EXISTS `phs_setting`;
-CREATE TABLE IF NOT EXISTS `phs_setting` (
-  `set_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `phs_setting` (
+  `set_id` int(11) NOT NULL,
   `set_name` varchar(100) NOT NULL,
-  `set_val` varchar(255) NOT NULL DEFAULT 'none',
-  PRIMARY KEY (`set_id`),
-  UNIQUE KEY `set_name` (`set_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+  `set_val` varchar(255) NOT NULL DEFAULT 'none'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `phs_setting`
@@ -1012,15 +964,13 @@ INSERT INTO `phs_setting` (`set_id`, `set_name`, `set_val`) VALUES
 -- Table structure for table `phs_users`
 --
 
-DROP TABLE IF EXISTS `phs_users`;
-CREATE TABLE IF NOT EXISTS `phs_users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `phs_users` (
+  `user_id` int(11) NOT NULL,
   `pgrp_id` int(11) DEFAULT NULL,
   `user_logon` varchar(100) NOT NULL,
   `user_password` varchar(100) NOT NULL,
-  `user_email` varchar(100) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `user_email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `phs_users`
@@ -1037,7 +987,7 @@ INSERT INTO `phs_users` (`user_id`, `pgrp_id`, `user_logon`, `user_password`, `u
 --
 DROP TABLE IF EXISTS `cpy_vall`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vall`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`p`.`pblk_id` AS `pblk_id`,`p`.`pblk_status` AS `pblk_status`,`p`.`pblk_order` AS `pblk_order`,`p`.`pblk_name` AS `pblk_name`,`p`.`pblk_bgcolor` AS `pblk_bgcolor`,`p`.`pblk_stext` AS `pblk_stext`,`b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`b`.`dblk_id` AS `dblk_id`,`b`.`dblk_order` AS `dblk_order`,`b`.`dblk_status` AS `dblk_status`,`b`.`dblk_type` AS `dblk_type`,`b`.`dblk_name` AS `dblk_name`,`b`.`dblk_image` AS `dblk_image`,`b`.`dblk_text` AS `dblk_text`,`b`.`dblk_stext` AS `dblk_stext` from (`cpy_vpage` `p` left join `cpy_vblock` `b` on((`b`.`blk_id` = `p`.`blk_id`))) ;
+CREATE VIEW `cpy_vall`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`p`.`pblk_id` AS `pblk_id`,`p`.`pblk_status` AS `pblk_status`,`p`.`pblk_order` AS `pblk_order`,`p`.`pblk_name` AS `pblk_name`,`p`.`pblk_bgcolor` AS `pblk_bgcolor`,`p`.`pblk_stext` AS `pblk_stext`,`b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`b`.`dblk_id` AS `dblk_id`,`b`.`dblk_order` AS `dblk_order`,`b`.`dblk_status` AS `dblk_status`,`b`.`dblk_type` AS `dblk_type`,`b`.`dblk_name` AS `dblk_name`,`b`.`dblk_image` AS `dblk_image`,`b`.`dblk_text` AS `dblk_text`,`b`.`dblk_stext` AS `dblk_stext` from (`cpy_vpage` `p` left join `cpy_vblock` `b` on((`b`.`blk_id` = `p`.`blk_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -1046,7 +996,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cpy_vblock`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vblock`  AS  select `b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`d`.`dblk_id` AS `dblk_id`,`d`.`dblk_order` AS `dblk_order`,`d`.`dblk_status` AS `dblk_status`,`d`.`dblk_type` AS `dblk_type`,`d`.`dblk_name` AS `dblk_name`,`d`.`dblk_image` AS `dblk_image`,`d`.`dblk_text` AS `dblk_text`,`d`.`dblk_stext` AS `dblk_stext` from (`cpy_block` `b` left join `cpy_block_detail` `d` on((`d`.`blk_id` = `b`.`blk_id`))) ;
+CREATE VIEW `cpy_vblock`  AS  select `b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`d`.`dblk_id` AS `dblk_id`,`d`.`dblk_order` AS `dblk_order`,`d`.`dblk_status` AS `dblk_status`,`d`.`dblk_type` AS `dblk_type`,`d`.`dblk_name` AS `dblk_name`,`d`.`dblk_image` AS `dblk_image`,`d`.`dblk_text` AS `dblk_text`,`d`.`dblk_stext` AS `dblk_stext` from (`cpy_block` `b` left join `cpy_block_detail` `d` on((`d`.`blk_id` = `b`.`blk_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -1055,7 +1005,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cpy_vmenu`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vmenu`  AS  select `m`.`menu_id` AS `menu_id`,`p`.`menu_id` AS `menu_pid`,`p`.`menu_name` AS `menu_pname`,`m`.`menu_rid` AS `menu_rid`,`md`.`mode_id` AS `mode_id`,`md`.`mode_name` AS `mode_name`,`tp`.`type_id` AS `type_id`,`tp`.`type_name` AS `type_name`,`sr`.`srch_id` AS `srch_id`,`sr`.`srch_name` AS `srch_name`,`m`.`menu_order` AS `menu_order`,`m`.`menu_status` AS `menu_status`,`m`.`menu_name` AS `menu_name`,`m`.`menu_icon` AS `menu_icon`,`m`.`page_id` AS `page_id`,`m`.`menu_href` AS `menu_href` from ((((`cpy_menu` `m` join `cpy_menu` `p`) join `cpy_menu_mode` `md`) join `cpy_menu_search` `sr`) join `cpy_menu_type` `tp`) where ((`m`.`menu_pid` = `p`.`menu_id`) and (`m`.`mode_id` = `md`.`mode_id`) and (`m`.`srch_id` = `sr`.`srch_id`) and (`m`.`type_id` = `tp`.`type_id`)) ;
+CREATE VIEW `cpy_vmenu`  AS  select `m`.`menu_id` AS `menu_id`,`p`.`menu_id` AS `menu_pid`,`p`.`menu_name` AS `menu_pname`,`m`.`menu_rid` AS `menu_rid`,`md`.`mode_id` AS `mode_id`,`md`.`mode_name` AS `mode_name`,`tp`.`type_id` AS `type_id`,`tp`.`type_name` AS `type_name`,`sr`.`srch_id` AS `srch_id`,`sr`.`srch_name` AS `srch_name`,`m`.`menu_order` AS `menu_order`,`m`.`menu_status` AS `menu_status`,`m`.`menu_name` AS `menu_name`,`m`.`menu_icon` AS `menu_icon`,`m`.`page_id` AS `page_id`,`m`.`menu_href` AS `menu_href` from ((((`cpy_menu` `m` join `cpy_menu` `p`) join `cpy_menu_mode` `md`) join `cpy_menu_search` `sr`) join `cpy_menu_type` `tp`) where ((`m`.`menu_pid` = `p`.`menu_id`) and (`m`.`mode_id` = `md`.`mode_id`) and (`m`.`srch_id` = `sr`.`srch_id`) and (`m`.`type_id` = `tp`.`type_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -1064,7 +1014,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cpy_vpage`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vpage`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`b`.`pblk_id` AS `pblk_id`,`b`.`blk_id` AS `blk_id`,`b`.`pblk_status` AS `pblk_status`,`b`.`pblk_order` AS `pblk_order`,`b`.`pblk_name` AS `pblk_name`,`b`.`pblk_bgcolor` AS `pblk_bgcolor`,`b`.`pblk_stext` AS `pblk_stext` from (`cpy_page` `p` left join `cpy_page_block` `b` on((`b`.`page_id` = `p`.`page_id`))) ;
+CREATE VIEW `cpy_vpage`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`b`.`pblk_id` AS `pblk_id`,`b`.`blk_id` AS `blk_id`,`b`.`pblk_status` AS `pblk_status`,`b`.`pblk_order` AS `pblk_order`,`b`.`pblk_name` AS `pblk_name`,`b`.`pblk_bgcolor` AS `pblk_bgcolor`,`b`.`pblk_stext` AS `pblk_stext` from (`cpy_page` `p` left join `cpy_page_block` `b` on((`b`.`page_id` = `p`.`page_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -1073,7 +1023,239 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cpy_vslider`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vslider`  AS  select `m`.`slid_id` AS `slid_id`,`m`.`slid_name` AS `slid_name`,`m`.`slid_rem` AS `slid_rem`,`t`.`tslid_id` AS `tslid_id`,`t`.`slid_order` AS `slid_order`,`t`.`slid_header` AS `slid_header`,`t`.`slid_text` AS `slid_text`,`t`.`slid_photo` AS `slid_photo`,`t`.`slid_link` AS `slid_link` from (`cpy_slider_mst` `m` join `cpy_slider_trn` `t`) where (`t`.`slid_id` = `m`.`slid_id`) ;
+CREATE VIEW `cpy_vslider`  AS  select `m`.`slid_id` AS `slid_id`,`m`.`slid_name` AS `slid_name`,`m`.`slid_rem` AS `slid_rem`,`t`.`tslid_id` AS `tslid_id`,`t`.`slid_order` AS `slid_order`,`t`.`slid_header` AS `slid_header`,`t`.`slid_text` AS `slid_text`,`t`.`slid_photo` AS `slid_photo`,`t`.`slid_link` AS `slid_link` from (`cpy_slider_mst` `m` join `cpy_slider_trn` `t`) where (`t`.`slid_id` = `m`.`slid_id`) ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cpy_block`
+--
+ALTER TABLE `cpy_block`
+  ADD PRIMARY KEY (`blk_id`),
+  ADD UNIQUE KEY `blk_name` (`blk_name`);
+
+--
+-- Indexes for table `cpy_block_detail`
+--
+ALTER TABLE `cpy_block_detail`
+  ADD PRIMARY KEY (`dblk_id`),
+  ADD UNIQUE KEY `dblk_name` (`blk_id`,`dblk_name`);
+
+--
+-- Indexes for table `cpy_menu`
+--
+ALTER TABLE `cpy_menu`
+  ADD PRIMARY KEY (`menu_id`),
+  ADD KEY `page_id` (`page_id`),
+  ADD KEY `menu_pid` (`menu_pid`),
+  ADD KEY `mode_id` (`mode_id`),
+  ADD KEY `type_id` (`type_id`),
+  ADD KEY `srch_id` (`srch_id`),
+  ADD KEY `menu_rid` (`menu_rid`);
+
+--
+-- Indexes for table `cpy_menu_mode`
+--
+ALTER TABLE `cpy_menu_mode`
+  ADD PRIMARY KEY (`mode_id`);
+
+--
+-- Indexes for table `cpy_menu_search`
+--
+ALTER TABLE `cpy_menu_search`
+  ADD PRIMARY KEY (`srch_id`),
+  ADD UNIQUE KEY `srch_name` (`srch_name`);
+
+--
+-- Indexes for table `cpy_menu_type`
+--
+ALTER TABLE `cpy_menu_type`
+  ADD PRIMARY KEY (`type_id`);
+
+--
+-- Indexes for table `cpy_news`
+--
+ALTER TABLE `cpy_news`
+  ADD PRIMARY KEY (`news_id`),
+  ADD KEY `type_id` (`type_id`);
+
+--
+-- Indexes for table `cpy_news_images`
+--
+ALTER TABLE `cpy_news_images`
+  ADD PRIMARY KEY (`nimg_id`),
+  ADD KEY `news_id` (`news_id`);
+
+--
+-- Indexes for table `cpy_news_type`
+--
+ALTER TABLE `cpy_news_type`
+  ADD PRIMARY KEY (`type_id`),
+  ADD UNIQUE KEY `type_name` (`type_name`);
+
+--
+-- Indexes for table `cpy_page`
+--
+ALTER TABLE `cpy_page`
+  ADD PRIMARY KEY (`page_id`),
+  ADD UNIQUE KEY `page_name` (`page_name`),
+  ADD KEY `slid_id` (`slid_id`);
+
+--
+-- Indexes for table `cpy_page_block`
+--
+ALTER TABLE `cpy_page_block`
+  ADD PRIMARY KEY (`pblk_id`),
+  ADD UNIQUE KEY `pblk_name` (`page_id`,`pblk_name`),
+  ADD KEY `blk_id` (`blk_id`);
+
+--
+-- Indexes for table `cpy_slider_mst`
+--
+ALTER TABLE `cpy_slider_mst`
+  ADD PRIMARY KEY (`slid_id`);
+
+--
+-- Indexes for table `cpy_slider_trn`
+--
+ALTER TABLE `cpy_slider_trn`
+  ADD PRIMARY KEY (`tslid_id`),
+  ADD KEY `slid_id` (`slid_id`);
+
+--
+-- Indexes for table `phs_metta`
+--
+ALTER TABLE `phs_metta`
+  ADD PRIMARY KEY (`mtta_id`),
+  ADD UNIQUE KEY `metta_name` (`metta_name`);
+
+--
+-- Indexes for table `phs_perms`
+--
+ALTER TABLE `phs_perms`
+  ADD PRIMARY KEY (`perm_id`),
+  ADD KEY `pgrp_id` (`pgrp_id`);
+
+--
+-- Indexes for table `phs_pgroup`
+--
+ALTER TABLE `phs_pgroup`
+  ADD PRIMARY KEY (`pgrp_id`);
+
+--
+-- Indexes for table `phs_setting`
+--
+ALTER TABLE `phs_setting`
+  ADD PRIMARY KEY (`set_id`),
+  ADD UNIQUE KEY `set_name` (`set_name`);
+
+--
+-- Indexes for table `phs_users`
+--
+ALTER TABLE `phs_users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cpy_block`
+--
+ALTER TABLE `cpy_block`
+  MODIFY `blk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+
+--
+-- AUTO_INCREMENT for table `cpy_block_detail`
+--
+ALTER TABLE `cpy_block_detail`
+  MODIFY `dblk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=248;
+
+--
+-- AUTO_INCREMENT for table `cpy_menu_mode`
+--
+ALTER TABLE `cpy_menu_mode`
+  MODIFY `mode_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cpy_menu_search`
+--
+ALTER TABLE `cpy_menu_search`
+  MODIFY `srch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `cpy_menu_type`
+--
+ALTER TABLE `cpy_menu_type`
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `cpy_news`
+--
+ALTER TABLE `cpy_news`
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `cpy_news_images`
+--
+ALTER TABLE `cpy_news_images`
+  MODIFY `nimg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `cpy_news_type`
+--
+ALTER TABLE `cpy_news_type`
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `cpy_page`
+--
+ALTER TABLE `cpy_page`
+  MODIFY `page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `cpy_page_block`
+--
+ALTER TABLE `cpy_page_block`
+  MODIFY `pblk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+
+--
+-- AUTO_INCREMENT for table `cpy_slider_mst`
+--
+ALTER TABLE `cpy_slider_mst`
+  MODIFY `slid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `cpy_slider_trn`
+--
+ALTER TABLE `cpy_slider_trn`
+  MODIFY `tslid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `phs_metta`
+--
+ALTER TABLE `phs_metta`
+  MODIFY `mtta_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `phs_perms`
+--
+ALTER TABLE `phs_perms`
+  MODIFY `perm_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `phs_setting`
+--
+ALTER TABLE `phs_setting`
+  MODIFY `set_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `phs_users`
+--
+ALTER TABLE `phs_users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
