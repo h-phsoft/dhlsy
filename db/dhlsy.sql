@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 13, 2019 at 08:59 AM
+-- Generation Time: May 14, 2019 at 01:49 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -495,7 +495,7 @@ CREATE TABLE IF NOT EXISTS `cpy_news` (
   `news_text` text NOT NULL,
   PRIMARY KEY (`news_id`),
   KEY `type_id` (`type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_news`
@@ -505,7 +505,9 @@ INSERT INTO `cpy_news` (`news_id`, `news_status`, `type_id`, `news_date`, `news_
 (2, 1, 2, '2018-05-10', 'Participation at \"Techno Build” Exhibition 2018', NULL, 'img2.jpg', '<p style=\"text-align:justify; padding: 25px;\">DHL Global Forwarding Syria participated in &quot;Techno Build&rdquo; Exhibition that was organized by Tayara Establishment for Exhibitions and Conferences at Damascus Fairgrounds from 10 to 14 May 2018. The exhibition included more than 80 Syrian and International Exhibitors from several construction and re-building companies. Represented by its exclusive agent in Syria, Nazha Logistics, DHL Global Forwarding participation in this exhibition came as it is one of the biggest international companies that support and develop construction by providing comprehensive, smart and flexible logistics solutions through its dedicated team of specialized experts and worldwide network</p>\r\n\r\n<p style=\"text-align:center\">May 2018</p>'),
 (3, 1, 1, '2018-11-01', 'DHL Global Forwarding Syria acquiring the ISO 9001:2015', NULL, 'News - ISO Slider Cover.jpg', '<p style=\"margin-left:0cm; margin-right:0cm; padding: 25px; text-align:justify\"><span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">Nazha Logistics - DHL Global Forwarding Exclusive Agent in Syria, has acquired the quality management system certification ISO 9001:2015 by SGS. This certificate enforces our vision as leading logistics services provider in Syria. </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:9.0pt\">November 2018</span></span></span></p>'),
 (4, 1, 1, '2019-02-05', 'DHL Global Forwarding Syria winning the “Best Agency Award', NULL, 'News - Best Agency Slider Cover.jpg', '<p style=\"margin-left:0cm; margin-right:0cm; padding: 25px; text-align:justify\"><span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">We attended the DHL Global Forwarding MEA Annual Conference held in Dubai from 3 &ndash; 5 February 2019. During the conference, we were awarded as the &ldquo;Best Agent&rdquo; in Middle East and Africa Division. This award has opened for us new horizons and more responsibilities.&nbsp; </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:9.0pt\">February 2019</span></span></span></p>'),
-(5, 1, 2, '2019-02-20', 'Company’s Awards Ceremony 2018', NULL, 'News - Awards Ceremony Slider Cover.jpg', '<p style=\"margin-left:0cm; margin-right:0cm; padding: 25px; text-align:justify\"><span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">The Company held its annual Award Ceremony for the outstanding employees in 2018 and for the employees who achieved 10 and 15 years of service. During the ceremony, 2019 work plan was reviewed, and thereafter, the certificates of appreciation and prizes were distributed to the honored staff. </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:9.0pt\">February 2019</span></span></span></p>');
+(5, 1, 2, '2019-02-20', 'Company’s Awards Ceremony 2018', NULL, 'News - Awards Ceremony Slider Cover.jpg', '<p style=\"margin-left:0cm; margin-right:0cm; padding: 25px; text-align:justify\"><span style=\"font-size:16px\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">The Company held its annual Award Ceremony for the outstanding employees in 2018 and for the employees who achieved 10 and 15 years of service. During the ceremony, 2019 work plan was reviewed, and thereafter, the certificates of appreciation and prizes were distributed to the honored staff. </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:center\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><span style=\"font-size:9.0pt\">February 2019</span></span></span></p>'),
+(6, 1, 2, '2019-04-23', 'Participation at “ME Build Show” 2019', 'Participation at “ME Build Show” 2019\r\n\r\n \r\n\r\nThe Company participated at the ME Build Show held from 23-27 April 2019 as the exclusive forwarder and logistic services provider. Organized by Tayara for International Exhibitions & Conferences, this trade show was part of 3 additional shows related to re-building. Our participation in this edition was huge, split into 4 vital locations over the venue.  \r\n\r\n \r\n\r\nApril 2019', 'Activities - ME Build Show Slider Cover.jpg', '<p style=\"text-align:justify\"><span style=\"color:#222222; font-family:Arial,Helvetica,sans-serif; font-size:small\">The Company participated at the ME Build Show held from 23-27 April 2019 as the exclusive forwarder and logistic services provider. Organized by Tayara for International Exhibitions &amp; Conferences, this trade show was part of 3 additional shows related to re-building. Our participation in this edition was huge, split into 4 vital locations over the venue. &nbsp;</span></p>'),
+(7, 1, 2, '2019-05-01', 'Participation at “Syria Health 2019”', 'Participation at “Syria Health 2019”\r\n\r\n \r\n\r\nThe “Syria Health Exhibition”, organized by Expo Cham was successful as a first edition with promising foreign participations. DHL Global Forwarding Syria’s team presented on site all our logistic services to exhibitors and visitors.', 'Activities - Syria Health Slider Cover.jpg', '<p style=\"text-align:justify\"><span style=\"color:#222222; font-family:Arial,Helvetica,sans-serif; font-size:small\">The &ldquo;Syria Health Exhibition&rdquo;, organized by Expo Cham was successful as a first edition with promising foreign participations. DHL Global Forwarding Syria&rsquo;s team presented on site all our logistic services to exhibitors and visitors.</span></p>');
 
 -- --------------------------------------------------------
 
@@ -521,7 +523,7 @@ CREATE TABLE IF NOT EXISTS `cpy_news_images` (
   `nimg_photo` varchar(200) NOT NULL,
   PRIMARY KEY (`nimg_id`),
   KEY `news_id` (`news_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cpy_news_images`
@@ -532,7 +534,17 @@ INSERT INTO `cpy_news_images` (`nimg_id`, `news_id`, `nimg_order`, `nimg_photo`)
 (4, 3, 2, 'News - ISO Slider 02.jpg'),
 (5, 5, 1, 'News - Awards Ceremony Slider 01.jpg'),
 (6, 5, 2, 'News - Awards Ceremony Slider 02.jpg'),
-(7, 5, 3, 'News - Awards Ceremony Slider 03.jpg');
+(7, 5, 3, 'News - Awards Ceremony Slider 03.jpg'),
+(8, 6, 1, 'Activities - ME Build Show popup Slider 01.jpg'),
+(9, 6, 2, 'Activities - ME Build Show popup Slider 02.jpg'),
+(10, 6, 3, 'Activities - ME Build Show popup Slider 03.jpg'),
+(11, 6, 5, 'Activities - ME Build Show popup Slider 05.jpg'),
+(12, 6, 4, 'Activities - ME Build Show popup Slider 04.jpg'),
+(13, 6, 6, 'Activities - ME Build Show popup Slider 06.jpg'),
+(14, 6, 7, 'Activities - ME Build Show popup Slider 07.jpg'),
+(15, 7, 1, 'Activities - Syria Health popup Slider 01.jpg'),
+(16, 7, 2, 'Activities - Syria Health popup Slider 02.jpg'),
+(17, 7, 3, 'Activities - Syria Health popup Slider 03.jpg');
 
 -- --------------------------------------------------------
 
@@ -1036,7 +1048,7 @@ INSERT INTO `phs_users` (`user_id`, `pgrp_id`, `user_logon`, `user_password`, `u
 --
 DROP TABLE IF EXISTS `cpy_vall`;
 
-CREATE VIEW `cpy_vall`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`p`.`pblk_id` AS `pblk_id`,`p`.`pblk_status` AS `pblk_status`,`p`.`pblk_order` AS `pblk_order`,`p`.`pblk_name` AS `pblk_name`,`p`.`pblk_bgcolor` AS `pblk_bgcolor`,`p`.`pblk_stext` AS `pblk_stext`,`b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`b`.`dblk_id` AS `dblk_id`,`b`.`dblk_order` AS `dblk_order`,`b`.`dblk_status` AS `dblk_status`,`b`.`dblk_type` AS `dblk_type`,`b`.`dblk_name` AS `dblk_name`,`b`.`dblk_image` AS `dblk_image`,`b`.`dblk_text` AS `dblk_text`,`b`.`dblk_stext` AS `dblk_stext` from (`cpy_vpage` `p` left join `cpy_vblock` `b` on((`b`.`blk_id` = `p`.`blk_id`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vall`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`p`.`pblk_id` AS `pblk_id`,`p`.`pblk_status` AS `pblk_status`,`p`.`pblk_order` AS `pblk_order`,`p`.`pblk_name` AS `pblk_name`,`p`.`pblk_bgcolor` AS `pblk_bgcolor`,`p`.`pblk_stext` AS `pblk_stext`,`b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`b`.`dblk_id` AS `dblk_id`,`b`.`dblk_order` AS `dblk_order`,`b`.`dblk_status` AS `dblk_status`,`b`.`dblk_type` AS `dblk_type`,`b`.`dblk_name` AS `dblk_name`,`b`.`dblk_image` AS `dblk_image`,`b`.`dblk_text` AS `dblk_text`,`b`.`dblk_stext` AS `dblk_stext` from (`cpy_vpage` `p` left join `cpy_vblock` `b` on((`b`.`blk_id` = `p`.`blk_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -1045,7 +1057,7 @@ CREATE VIEW `cpy_vall`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS
 --
 DROP TABLE IF EXISTS `cpy_vblock`;
 
-CREATE VIEW `cpy_vblock`  AS  select `b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`d`.`dblk_id` AS `dblk_id`,`d`.`dblk_order` AS `dblk_order`,`d`.`dblk_status` AS `dblk_status`,`d`.`dblk_type` AS `dblk_type`,`d`.`dblk_name` AS `dblk_name`,`d`.`dblk_image` AS `dblk_image`,`d`.`dblk_text` AS `dblk_text`,`d`.`dblk_stext` AS `dblk_stext` from (`cpy_block` `b` left join `cpy_block_detail` `d` on((`d`.`blk_id` = `b`.`blk_id`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vblock`  AS  select `b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`d`.`dblk_id` AS `dblk_id`,`d`.`dblk_order` AS `dblk_order`,`d`.`dblk_status` AS `dblk_status`,`d`.`dblk_type` AS `dblk_type`,`d`.`dblk_name` AS `dblk_name`,`d`.`dblk_image` AS `dblk_image`,`d`.`dblk_text` AS `dblk_text`,`d`.`dblk_stext` AS `dblk_stext` from (`cpy_block` `b` left join `cpy_block_detail` `d` on((`d`.`blk_id` = `b`.`blk_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -1054,7 +1066,7 @@ CREATE VIEW `cpy_vblock`  AS  select `b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS 
 --
 DROP TABLE IF EXISTS `cpy_vmenu`;
 
-CREATE VIEW `cpy_vmenu`  AS  select `m`.`menu_id` AS `menu_id`,`p`.`menu_id` AS `menu_pid`,`p`.`menu_name` AS `menu_pname`,`m`.`menu_rid` AS `menu_rid`,`md`.`mode_id` AS `mode_id`,`md`.`mode_name` AS `mode_name`,`tp`.`type_id` AS `type_id`,`tp`.`type_name` AS `type_name`,`sr`.`srch_id` AS `srch_id`,`sr`.`srch_name` AS `srch_name`,`m`.`menu_order` AS `menu_order`,`m`.`menu_status` AS `menu_status`,`m`.`menu_name` AS `menu_name`,`m`.`menu_icon` AS `menu_icon`,`m`.`page_id` AS `page_id`,`m`.`menu_href` AS `menu_href` from ((((`cpy_menu` `m` join `cpy_menu` `p`) join `cpy_menu_mode` `md`) join `cpy_menu_search` `sr`) join `cpy_menu_type` `tp`) where ((`m`.`menu_pid` = `p`.`menu_id`) and (`m`.`mode_id` = `md`.`mode_id`) and (`m`.`srch_id` = `sr`.`srch_id`) and (`m`.`type_id` = `tp`.`type_id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vmenu`  AS  select `m`.`menu_id` AS `menu_id`,`p`.`menu_id` AS `menu_pid`,`p`.`menu_name` AS `menu_pname`,`m`.`menu_rid` AS `menu_rid`,`md`.`mode_id` AS `mode_id`,`md`.`mode_name` AS `mode_name`,`tp`.`type_id` AS `type_id`,`tp`.`type_name` AS `type_name`,`sr`.`srch_id` AS `srch_id`,`sr`.`srch_name` AS `srch_name`,`m`.`menu_order` AS `menu_order`,`m`.`menu_status` AS `menu_status`,`m`.`menu_name` AS `menu_name`,`m`.`menu_icon` AS `menu_icon`,`m`.`page_id` AS `page_id`,`m`.`menu_href` AS `menu_href` from ((((`cpy_menu` `m` join `cpy_menu` `p`) join `cpy_menu_mode` `md`) join `cpy_menu_search` `sr`) join `cpy_menu_type` `tp`) where ((`m`.`menu_pid` = `p`.`menu_id`) and (`m`.`mode_id` = `md`.`mode_id`) and (`m`.`srch_id` = `sr`.`srch_id`) and (`m`.`type_id` = `tp`.`type_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -1063,7 +1075,7 @@ CREATE VIEW `cpy_vmenu`  AS  select `m`.`menu_id` AS `menu_id`,`p`.`menu_id` AS 
 --
 DROP TABLE IF EXISTS `cpy_vpage`;
 
-CREATE VIEW `cpy_vpage`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`b`.`pblk_id` AS `pblk_id`,`b`.`blk_id` AS `blk_id`,`b`.`pblk_status` AS `pblk_status`,`b`.`pblk_order` AS `pblk_order`,`b`.`pblk_name` AS `pblk_name`,`b`.`pblk_bgcolor` AS `pblk_bgcolor`,`b`.`pblk_stext` AS `pblk_stext` from (`cpy_page` `p` left join `cpy_page_block` `b` on((`b`.`page_id` = `p`.`page_id`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vpage`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`b`.`pblk_id` AS `pblk_id`,`b`.`blk_id` AS `blk_id`,`b`.`pblk_status` AS `pblk_status`,`b`.`pblk_order` AS `pblk_order`,`b`.`pblk_name` AS `pblk_name`,`b`.`pblk_bgcolor` AS `pblk_bgcolor`,`b`.`pblk_stext` AS `pblk_stext` from (`cpy_page` `p` left join `cpy_page_block` `b` on((`b`.`page_id` = `p`.`page_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -1072,7 +1084,7 @@ CREATE VIEW `cpy_vpage`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` A
 --
 DROP TABLE IF EXISTS `cpy_vslider`;
 
-CREATE VIEW `cpy_vslider`  AS  select `m`.`slid_id` AS `slid_id`,`m`.`slid_name` AS `slid_name`,`m`.`slid_rem` AS `slid_rem`,`t`.`tslid_id` AS `tslid_id`,`t`.`slid_order` AS `slid_order`,`t`.`slid_header` AS `slid_header`,`t`.`slid_text` AS `slid_text`,`t`.`slid_photo` AS `slid_photo`,`t`.`slid_link` AS `slid_link` from (`cpy_slider_mst` `m` join `cpy_slider_trn` `t`) where (`t`.`slid_id` = `m`.`slid_id`) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vslider`  AS  select `m`.`slid_id` AS `slid_id`,`m`.`slid_name` AS `slid_name`,`m`.`slid_rem` AS `slid_rem`,`t`.`tslid_id` AS `tslid_id`,`t`.`slid_order` AS `slid_order`,`t`.`slid_header` AS `slid_header`,`t`.`slid_text` AS `slid_text`,`t`.`slid_photo` AS `slid_photo`,`t`.`slid_link` AS `slid_link` from (`cpy_slider_mst` `m` join `cpy_slider_trn` `t`) where (`t`.`slid_id` = `m`.`slid_id`) ;
 
 --
 -- Constraints for dumped tables
