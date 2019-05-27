@@ -146,7 +146,7 @@ class cMenu {
                       <?php
                       foreach ($cMnu->aSubs as $cMenu) {
                         ?>
-                        <div class="col-sm-2">
+                        <div class="col-md-3 col-lg-2">
                           <div class="d-none d-sm-block col-12 text-center">
                             <a class="ph-menu-link ph-menu-image-link nav-link u-list__link" data-mid="<?php echo ($cMenu->Menu_RId == 0 ? $cMenu->Menu_Id : $cMenu->Menu_RId); ?>" data-mode="<?php echo $cMenu->Mode_Id; ?>" data-page="<?php echo $cMenu->Page_Id; ?>">
                               <img src="assets/img/icons/<?php echo $cMenu->Menu_Icon; ?>" style="width: 100%;">

@@ -228,7 +228,7 @@ if ($nBlocks > 0) {
               ?>
               <div id="newsDiv" class="row d-block">
                 <div id="logger"></div>
-                <div id="newsSlider<?php echo $cPageBlock->PBlk_Id; ?>" class="carousel slide w-100" style="min-height: 60vh;" data-ride="carousel">
+                <div id="newsSlider<?php echo $cPageBlock->PBlk_Id; ?>" class="carousel slide w-100" style="min-height: 50vh;" data-ride="carousel">
                   <ol id="newsOL<?php echo $cPageBlock->PBlk_Id; ?>" class="carousel-indicators">
                     <?php
                     $vActive = "active";
