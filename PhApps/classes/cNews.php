@@ -18,7 +18,7 @@ class cNews {
   var $News_Text;
   var $News_SText;
 
-  public static function getArray($vCond) {
+  public static function getArray($vCond = "") {
     $aArray = array();
     $nIdx = 0;
     $sSQL = 'SELECT `news_id`, `news_date`, `news_status`, `type_id`, `news_title`, `news_image`, `news_text`, `news_stext`'

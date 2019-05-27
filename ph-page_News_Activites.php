@@ -199,13 +199,10 @@ if ($nBlocks > 0) {
       <?php
     } elseif ($nBlkType == 5) {
       // News
-      //$aNews = cNews::getArray("`type_id`=1");
-      //$aActivities = cNews::getArray("`type_id`=2");
-      //$nCountNews = count($aNews);
-      //$nCountActivities = count($aActivities);
-      $aNews = cNews::getArray();
+      $aNews = cNews::getArray("`type_id`=1");
+      $aActivities = cNews::getArray("`type_id`=2");
       $nCountNews = count($aNews);
-      $nCountActivities = 0;
+      $nCountActivities = count($aActivities);
       if ($nCountNews > 0 || $nCountActivities > 0) {
         ?>
         <section class="text-center container-fluid p-3" <?php echo $vBGColor; ?>>
@@ -215,12 +212,10 @@ if ($nBlocks > 0) {
                 <h1 class="news-title">NEWS & ACTIVITIES</h1>
               </div>
               <div class="col-12 col-md-5 col-12 d-flex justify-content-end px-6">
-                <!--
                 <div class="d-flex align-items-center">
                   <div class="newsBtn d-inline p-1 btn btn-sm bg-news text-white mr-1 active" data-id="newsDiv">NEWS</div>
                   <div class="newsBtn d-inline p-1 btn btn-sm bg-news text-white mr-1" data-id="activityDiv">Activities</div>
                 </div>
-                -->
               </div>
             </div>
             <?php
