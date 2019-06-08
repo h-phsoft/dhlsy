@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 04, 2019 at 01:20 PM
+-- Generation Time: May 20, 2019 at 08:26 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -1048,7 +1048,7 @@ INSERT INTO `phs_users` (`user_id`, `pgrp_id`, `user_logon`, `user_password`, `u
 --
 DROP TABLE IF EXISTS `cpy_vall`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vall`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`p`.`pblk_id` AS `pblk_id`,`p`.`pblk_status` AS `pblk_status`,`p`.`pblk_order` AS `pblk_order`,`p`.`pblk_name` AS `pblk_name`,`p`.`pblk_bgcolor` AS `pblk_bgcolor`,`p`.`pblk_stext` AS `pblk_stext`,`b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`b`.`dblk_id` AS `dblk_id`,`b`.`dblk_order` AS `dblk_order`,`b`.`dblk_status` AS `dblk_status`,`b`.`dblk_type` AS `dblk_type`,`b`.`dblk_name` AS `dblk_name`,`b`.`dblk_image` AS `dblk_image`,`b`.`dblk_text` AS `dblk_text`,`b`.`dblk_stext` AS `dblk_stext` from (`cpy_vpage` `p` left join `cpy_vblock` `b` on((`b`.`blk_id` = `p`.`blk_id`))) ;
+CREATE VIEW `cpy_vall`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`p`.`pblk_id` AS `pblk_id`,`p`.`pblk_status` AS `pblk_status`,`p`.`pblk_order` AS `pblk_order`,`p`.`pblk_name` AS `pblk_name`,`p`.`pblk_bgcolor` AS `pblk_bgcolor`,`p`.`pblk_stext` AS `pblk_stext`,`b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`b`.`dblk_id` AS `dblk_id`,`b`.`dblk_order` AS `dblk_order`,`b`.`dblk_status` AS `dblk_status`,`b`.`dblk_type` AS `dblk_type`,`b`.`dblk_name` AS `dblk_name`,`b`.`dblk_image` AS `dblk_image`,`b`.`dblk_text` AS `dblk_text`,`b`.`dblk_stext` AS `dblk_stext` from (`cpy_vpage` `p` left join `cpy_vblock` `b` on((`b`.`blk_id` = `p`.`blk_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -1057,7 +1057,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cpy_vblock`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vblock`  AS  select `b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`d`.`dblk_id` AS `dblk_id`,`d`.`dblk_order` AS `dblk_order`,`d`.`dblk_status` AS `dblk_status`,`d`.`dblk_type` AS `dblk_type`,`d`.`dblk_name` AS `dblk_name`,`d`.`dblk_image` AS `dblk_image`,`d`.`dblk_text` AS `dblk_text`,`d`.`dblk_stext` AS `dblk_stext` from (`cpy_block` `b` left join `cpy_block_detail` `d` on((`d`.`blk_id` = `b`.`blk_id`))) ;
+CREATE VIEW `cpy_vblock`  AS  select `b`.`blk_id` AS `blk_id`,`b`.`blk_name` AS `blk_name`,`b`.`blk_status` AS `blk_status`,`b`.`blk_type` AS `blk_type`,`b`.`blk_stext` AS `blk_stext`,`d`.`dblk_id` AS `dblk_id`,`d`.`dblk_order` AS `dblk_order`,`d`.`dblk_status` AS `dblk_status`,`d`.`dblk_type` AS `dblk_type`,`d`.`dblk_name` AS `dblk_name`,`d`.`dblk_image` AS `dblk_image`,`d`.`dblk_text` AS `dblk_text`,`d`.`dblk_stext` AS `dblk_stext` from (`cpy_block` `b` left join `cpy_block_detail` `d` on((`d`.`blk_id` = `b`.`blk_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -1066,7 +1066,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cpy_vmenu`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vmenu`  AS  select `m`.`menu_id` AS `menu_id`,`p`.`menu_id` AS `menu_pid`,`p`.`menu_name` AS `menu_pname`,`m`.`menu_rid` AS `menu_rid`,`md`.`mode_id` AS `mode_id`,`md`.`mode_name` AS `mode_name`,`tp`.`type_id` AS `type_id`,`tp`.`type_name` AS `type_name`,`sr`.`srch_id` AS `srch_id`,`sr`.`srch_name` AS `srch_name`,`m`.`menu_order` AS `menu_order`,`m`.`menu_status` AS `menu_status`,`m`.`menu_name` AS `menu_name`,`m`.`menu_icon` AS `menu_icon`,`m`.`page_id` AS `page_id`,`m`.`menu_href` AS `menu_href` from ((((`cpy_menu` `m` join `cpy_menu` `p`) join `cpy_menu_mode` `md`) join `cpy_menu_search` `sr`) join `cpy_menu_type` `tp`) where ((`m`.`menu_pid` = `p`.`menu_id`) and (`m`.`mode_id` = `md`.`mode_id`) and (`m`.`srch_id` = `sr`.`srch_id`) and (`m`.`type_id` = `tp`.`type_id`)) ;
+CREATE VIEW `cpy_vmenu`  AS  select `m`.`menu_id` AS `menu_id`,`p`.`menu_id` AS `menu_pid`,`p`.`menu_name` AS `menu_pname`,`m`.`menu_rid` AS `menu_rid`,`md`.`mode_id` AS `mode_id`,`md`.`mode_name` AS `mode_name`,`tp`.`type_id` AS `type_id`,`tp`.`type_name` AS `type_name`,`sr`.`srch_id` AS `srch_id`,`sr`.`srch_name` AS `srch_name`,`m`.`menu_order` AS `menu_order`,`m`.`menu_status` AS `menu_status`,`m`.`menu_name` AS `menu_name`,`m`.`menu_icon` AS `menu_icon`,`m`.`page_id` AS `page_id`,`m`.`menu_href` AS `menu_href` from ((((`cpy_menu` `m` join `cpy_menu` `p`) join `cpy_menu_mode` `md`) join `cpy_menu_search` `sr`) join `cpy_menu_type` `tp`) where ((`m`.`menu_pid` = `p`.`menu_id`) and (`m`.`mode_id` = `md`.`mode_id`) and (`m`.`srch_id` = `sr`.`srch_id`) and (`m`.`type_id` = `tp`.`type_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -1075,7 +1075,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cpy_vpage`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vpage`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`b`.`pblk_id` AS `pblk_id`,`b`.`blk_id` AS `blk_id`,`b`.`pblk_status` AS `pblk_status`,`b`.`pblk_order` AS `pblk_order`,`b`.`pblk_name` AS `pblk_name`,`b`.`pblk_bgcolor` AS `pblk_bgcolor`,`b`.`pblk_stext` AS `pblk_stext` from (`cpy_page` `p` left join `cpy_page_block` `b` on((`b`.`page_id` = `p`.`page_id`))) ;
+CREATE VIEW `cpy_vpage`  AS  select `p`.`page_id` AS `page_id`,`p`.`page_name` AS `page_name`,`p`.`page_status` AS `page_status`,`p`.`slid_id` AS `slid_id`,`p`.`page_stext` AS `page_stext`,`b`.`pblk_id` AS `pblk_id`,`b`.`blk_id` AS `blk_id`,`b`.`pblk_status` AS `pblk_status`,`b`.`pblk_order` AS `pblk_order`,`b`.`pblk_name` AS `pblk_name`,`b`.`pblk_bgcolor` AS `pblk_bgcolor`,`b`.`pblk_stext` AS `pblk_stext` from (`cpy_page` `p` left join `cpy_page_block` `b` on((`b`.`page_id` = `p`.`page_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -1084,7 +1084,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cpy_vslider`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cpy_vslider`  AS  select `m`.`slid_id` AS `slid_id`,`m`.`slid_name` AS `slid_name`,`m`.`slid_rem` AS `slid_rem`,`t`.`tslid_id` AS `tslid_id`,`t`.`slid_order` AS `slid_order`,`t`.`slid_header` AS `slid_header`,`t`.`slid_text` AS `slid_text`,`t`.`slid_photo` AS `slid_photo`,`t`.`slid_link` AS `slid_link` from (`cpy_slider_mst` `m` join `cpy_slider_trn` `t`) where (`t`.`slid_id` = `m`.`slid_id`) ;
+CREATE VIEW `cpy_vslider`  AS  select `m`.`slid_id` AS `slid_id`,`m`.`slid_name` AS `slid_name`,`m`.`slid_rem` AS `slid_rem`,`t`.`tslid_id` AS `tslid_id`,`t`.`slid_order` AS `slid_order`,`t`.`slid_header` AS `slid_header`,`t`.`slid_text` AS `slid_text`,`t`.`slid_photo` AS `slid_photo`,`t`.`slid_link` AS `slid_link` from (`cpy_slider_mst` `m` join `cpy_slider_trn` `t`) where (`t`.`slid_id` = `m`.`slid_id`) ;
 
 --
 -- Constraints for dumped tables
