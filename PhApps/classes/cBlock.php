@@ -16,7 +16,7 @@ class cBlock {
   var $Blk_SText;
   var $aDetails = array();
 
-  public static function getArray($vCond) {
+  public static function getArray($vCond = "") {
     $aArray = array();
     $nIdx = 0;
     $sSQL = 'SELECT `blk_id`, `blk_name`, `blk_status`, `blk_type`, `blk_stext`'

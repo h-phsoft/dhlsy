@@ -19,7 +19,7 @@ class cPageBlock {
   var $PBlk_SText;
   var $Block;
 
-  public static function getArray($nPageId) {
+  public static function getArray($nPageId = "") {
     $aArray = array();
     $nIdx = 0;
     $sSQL = 'SELECT `pblk_id`, `page_id`, `blk_id`, `pblk_order`, `pblk_name`, `pblk_status`, `pblk_bgcolor`, `pblk_stext`'

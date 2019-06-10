@@ -19,7 +19,7 @@ class cBlockDetail {
   var $DBlk_Text;
   var $DBlk_SText;
 
-  public static function getArray($nPId) {
+  public static function getArray($nPId = "") {
     $aArray = array();
     $nIdx = 0;
     $sSQL = 'SELECT `dblk_id`, `blk_id`, `dblk_order`, `dblk_status`, `dblk_type`, `dblk_name`, `dblk_image`, `dblk_text`, `dblk_stext`'

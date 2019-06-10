@@ -18,7 +18,7 @@ class cPage {
   var $Slider;
   var $aBlocks = array();
 
-  public static function getArray($vCond) {
+  public static function getArray($vCond = "") {
     $aArray = array();
     $nIdx = 0;
     $sSQL = 'SELECT `page_id`, `page_name`, `page_status`, `slid_id`, `page_stext`, `page_desc`'
